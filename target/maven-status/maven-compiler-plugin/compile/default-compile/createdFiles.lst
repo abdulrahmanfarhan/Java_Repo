@@ -1,5 +1,7 @@
 rectangles\Rectangle.class
+stocks\TestStock.class
 rectangles\TestRectangle.class
+stocks\stock.class
 bmicalculator\Main.class
 bmicalculator\BMICalculator.class
 bmicalculator\UserInput.class
