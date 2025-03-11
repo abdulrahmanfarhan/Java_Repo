@@ -19,5 +19,6 @@ public class TestRectangle {
         System.out.println("The height of rectangle r2 is " + r2.getHeight());
         System.out.println("The area of rectangle r2 is: " + r2.getArea());
         System.out.println("The perimeter of rectangle r2 is: " + r2.getPerimeter());
+        System.out.println("Abdulrahman farhan");
     }
 }
