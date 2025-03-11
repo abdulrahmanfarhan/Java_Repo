@@ -1,8 +1,8 @@
-package test;
+package extraProblemsAndCode;
 
 import java.util.Scanner;
 
-public class test1 {
+public class PositiveNumberSum {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
