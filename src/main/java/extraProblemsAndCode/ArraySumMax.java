@@ -12,13 +12,14 @@ public class ArraySumMax {
         int sum = 0;
         int max = 0;
         for (int i = 0; i < a.length; i++) {
-            System.out.println("Enter then number " + (i + 1));
+            System.out.print("Enter then number " + (i + 1)+" :");
             a[i] = s.nextInt();
             sum += a[i];
             if (i == 0) {
                 max = a[0];
+            } else {
+                max = (a[i] > max) ? a[i] : max;
             }
-            max = (a[i] > max) ? a[i] : max;
         }
         System.out.println("The sum is:" + sum);
         System.out.println("The max is:" + max);
