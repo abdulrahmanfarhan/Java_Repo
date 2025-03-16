@@ -3,12 +3,17 @@ rectangles\Rectangle.class
 stocks\TestStock.class
 extraProblemsAndCode\PositiveNumberSum.class
 rectangles\TestRectangle.class
+Account\TestAccount.class
 stocks\stock.class
 circlesummary\CreatArrayOfObj.class
+StopWatch\TestStopWatch.class
+Account\Account.class
+extraProblemsAndCode\Gregorian_Calendar.class
 bmicalculator\Main.class
 circlesummary\TotalAreaCalculator.class
 bmicalculator\UserInput.class
 extraProblemsAndCode\ArraySumMax.class
 extraProblemsAndCode\Employee.class
 circlesummary\Circle.class
+StopWatch\StopWatch.class
 bmicalculator\BMICalculator.class
