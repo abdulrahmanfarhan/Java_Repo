@@ -6,7 +6,7 @@ import java.util.Scanner;
  *
  * @author Abdulrahman
  */
-public class DaimondPattern {
+public class FirstPattern {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);

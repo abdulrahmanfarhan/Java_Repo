@@ -7,13 +7,14 @@ Account\TestAccount.class
 stocks\stock.class
 circlesummary\CreatArrayOfObj.class
 StopWatch\TestStopWatch.class
+extraProblemsAndCode\DiamondPattern.class
 Account\Account.class
 extraProblemsAndCode\Gregorian_Calendar.class
 bmicalculator\Main.class
+extraProblemsAndCode\FirstPattern.class
 circlesummary\TotalAreaCalculator.class
 bmicalculator\UserInput.class
 extraProblemsAndCode\TrianglePattern.class
-extraProblemsAndCode\DaimondPattern.class
 extraProblemsAndCode\ArraySumMax.class
 extraProblemsAndCode\Employee.class
 circlesummary\Circle.class
