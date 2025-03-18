@@ -9,31 +9,37 @@ public class DiamondPattern {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.println("enter the number");
-        int n = s.nextInt();
-        printUpperHalf(n);
-        printLowerHalf(n);
+        System.out.println("enter the number of pattern1");
+        int n1 = s.nextInt();
+        System.out.println("enter the number of pattern2");
+        int n2 = s.nextInt();
+        System.out.println("enter the number of pattern3");
+        int n3 = s.nextInt();
+        System.out.println("Enter the size of pattern");
+        int size = s.nextInt();
+        printUpperHalf(n1, n2, n3, size);
+        printLowerHalf(n1, n2, n3, size);
     }
 
-    public static void printUpperHalf(int n) {
-        for (int i = 1; i < 10; i++) {
-            printLine(10 - i, i * 2 - 1, '1', '/', '\\', ' ');
-            printLine(10 - i, i * 2 - 1, '|', '|', '|', '-');
-            printLine(10 - i, i * 2 - 1, '1', '/', '\\', ' ');
+    public static void printUpperHalf(int n1, int n2, int n3, int size) {
+        for (int i = 1; i < size; i++) {
+            printLine(size - i, i * 2 - 1, n1, '/', '\\');
+            printLine(size - i, i * 2 - 1, n2, '|', '|');
+            printLine(size - i, i * 2 - 1, n3, '/', '\\');
             System.out.println();
         }
     }
 
-    public static void printLowerHalf(int n) {
-        for (int i = 10; i >= 1; i--) {
-            printLine(10 - i, i * 2 - 1, 'o', '\\', '/', '^');
-            printLine(10 - i, i * 2 - 1, '|', '|', '|', '-');
-            printLine(10 - i, i * 2 - 1, 'o', '\\', '/', '^');
+    public static void printLowerHalf(int n1, int n2, int n3, int size) {
+        for (int i = (size - 1); i >= 1; i--) {
+            printLine(size - i, i * 2 - 1, n1, '\\', '/');
+            printLine(size - i, i * 2 - 1, n2, '|', '|');
+            printLine(size - i, i * 2 - 1, n3, '\\', '/');
             System.out.println();
         }
     }
 
-    public static void printLine(int spaces, int width, char pattern1, char one, char two, char full) {
+    public static void printLine(int spaces, int width, int pattern, char one, char two) {
         System.out.print("|");
         for (int j = 0; j <= spaces; j++) {
             System.out.print(one);
@@ -42,7 +48,17 @@ public class DiamondPattern {
             if (k == 0 || k == width - 1) {
                 System.out.print(" ");
             } else {
-                System.out.print(k % 2 == 0 ? pattern1 : full);
+                if (k % 2 != 0) {
+                    System.out.print(pattern);
+                } else {
+                    if (k > (width / 2)) {
+                        System.out.print(two);
+                    } else if (k == (width / 2)) {
+                        System.out.print(".");
+                    } else {
+                        System.out.print(one);
+                    }
+                }
             }
         }
         for (int j = 0; j <= spaces; j++) {
