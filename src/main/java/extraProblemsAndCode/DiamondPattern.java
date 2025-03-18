@@ -40,7 +40,7 @@ public class DiamondPattern {
     }
 
     public static void printLine(int spaces, int width, int pattern, char one, char two) {
-        System.out.print("|-|");
+        System.out.print("|");
         for (int j = 0; j <= spaces; j++) {
             System.out.print(one);
         }
@@ -58,6 +58,6 @@ public class DiamondPattern {
         for (int j = 0; j <= spaces; j++) {
             System.out.print(two);
         }
-        System.out.print("|-|Abood");
+        System.out.print("|");
     }
 }
