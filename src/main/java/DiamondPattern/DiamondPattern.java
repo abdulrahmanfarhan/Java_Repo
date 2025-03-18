@@ -1,9 +1,9 @@
-package extraProblemsAndCode;
+package DiamondPattern;
 
 import java.util.Scanner;
 
 /**
- * @author Abdulrahman
+ * @author Abdulrahman_Farhan
  */
 public class DiamondPattern {
 
