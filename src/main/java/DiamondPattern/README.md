@@ -37,5 +37,5 @@ The program prints the diamond shape with various characters such as `|`, `/`, a
    - **Pattern 1 count** (e.g., 1).
    - **Pattern 2 count** (e.g., 2).
    - **Pattern 3 count** (e.g., 3).
-   - **Pattern size** (e.g., 5).
+   - **Pattern size** (e.g., 10).
 3. The diamond pattern will be printed on the screen.
