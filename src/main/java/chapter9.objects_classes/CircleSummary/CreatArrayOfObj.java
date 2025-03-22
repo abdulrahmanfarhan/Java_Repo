@@ -1,4 +1,4 @@
-package circlesummary;
+package chapter9.objects_classes.CircleSummary;
 
 public class CreatArrayOfObj {
     public static Circle[] Creat(int num) {

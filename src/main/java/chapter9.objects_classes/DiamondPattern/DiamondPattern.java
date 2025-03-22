@@ -1,4 +1,4 @@
-package DiamondPattern;
+package chapter9.objects_classes.DiamondPattern;
 
 import java.util.Scanner;
 

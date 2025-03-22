@@ -1,4 +1,4 @@
-package rectangles;
+package chapter9.objects_classes.rectangles;
 
 /**
  *

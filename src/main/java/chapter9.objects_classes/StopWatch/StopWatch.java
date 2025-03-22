@@ -1,4 +1,4 @@
-package StopWatch;
+package chapter9.objects_classes.StopWatch;
 
 import java.util.Date;
 

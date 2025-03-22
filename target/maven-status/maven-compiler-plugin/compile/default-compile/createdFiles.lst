@@ -1,5 +1,4 @@
 extraProblemsAndCode\RandomNumberGenerator.class
-DiamondPattern\DiamondPattern.class
 stocks\TestStock.class
 Fan\TestFan.class
 stocks\stock.class
@@ -14,6 +13,7 @@ extraProblemsAndCode\TrianglePattern.class
 extraProblemsAndCode\ArraySumMax.class
 extraProblemsAndCode\Employee.class
 circlesummary\Circle.class
+chapter9\objects_classes\DiamondPattern\DiamondPattern.class
 Location\Test.class
 rectangles\Rectangle.class
 extraProblemsAndCode\PositiveNumberSum.class

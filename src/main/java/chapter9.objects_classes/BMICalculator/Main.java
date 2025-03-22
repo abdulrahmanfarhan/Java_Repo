@@ -1,4 +1,4 @@
-package bmicalculator;
+package chapter9.objects_classes.bmicalculator;
 
 import java.util.Scanner;
 

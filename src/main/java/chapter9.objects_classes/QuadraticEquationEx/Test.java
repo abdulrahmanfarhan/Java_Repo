@@ -1,4 +1,4 @@
-package QuadraticEquationEx;
+package chapter9.objects_classes.QuadraticEquationEx;
 
 import java.util.Scanner;
 

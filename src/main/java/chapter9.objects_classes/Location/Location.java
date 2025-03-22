@@ -1,4 +1,4 @@
-package Location;
+package chapter9.objects_classes.Location;
 
 import java.util.Scanner;
 

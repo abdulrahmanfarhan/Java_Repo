@@ -1,4 +1,4 @@
-package extraProblemsAndCode;
+package chapter9.objects_classes.ExtraProblemsAndCode;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package rectangles;
+package chapter9.objects_classes.rectangles;
 
 /**
  *
@@ -7,8 +7,8 @@ package rectangles;
 public class TestRectangle {
 
     public static void main(String[] args) {
-        rectangles.Rectangle r1 = new Rectangle(4, 40);
-        rectangles.Rectangle r2 = new Rectangle(3.5, 35.9);
+        Rectangle r1 = new Rectangle(4, 40);
+        Rectangle r2 = new Rectangle(3.5, 35.9);
         
         System.out.println("The width of rectangle r1 is " + r1.getWidth());
         System.out.println("The height of rectangle r1 is " + r1.getHeight());
