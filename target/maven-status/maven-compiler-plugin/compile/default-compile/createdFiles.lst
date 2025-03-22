@@ -14,6 +14,7 @@ extraProblemsAndCode\TrianglePattern.class
 extraProblemsAndCode\ArraySumMax.class
 extraProblemsAndCode\Employee.class
 circlesummary\Circle.class
+Location\Test.class
 rectangles\Rectangle.class
 extraProblemsAndCode\PositiveNumberSum.class
 rectangles\TestRectangle.class
@@ -22,6 +23,7 @@ QuadraticEquationEx\Test.class
 circlesummary\CreatArrayOfObj.class
 StopWatch\TestStopWatch.class
 bmicalculator\UserInput.class
+Location\Location.class
 Fan\Fan.class
 StopWatch\StopWatch.class
 QuadraticEquationEx\QuadraticEquation.class
