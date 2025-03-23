@@ -12,10 +12,8 @@ public class Main {
             sstm = UserInput.selectSystem();
         }
         System.out.println("You selected the " + sstm + " system for BMI calculation.");
-        double result = sstm.equalsIgnoreCase("Imperial")
-                ? BMICalculator.imperialCalc(s)
-                : BMICalculator.metricCalc(s);
-
+        double result = sstm.equalsIgnoreCase("Imperial") ? BMICalculator.imperialCalc(s) : BMICalculator.metricCalc(s);
+        
         System.out.println("Your BMI is: " + result);
         if (result < 18.5) {
             System.out.println("Underweight");
