@@ -1,4 +1,4 @@
-package chapter10.object_oriented_thinking.Loan;
+package chapter10.ObjectOrientedThinking.ExtraProblemsAndCode;
 
 /**
  *

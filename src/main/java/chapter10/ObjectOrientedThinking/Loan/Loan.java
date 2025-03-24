@@ -1,5 +1,9 @@
-package chapter10.object_oriented_thinking.Loan;
+package chapter10.ObjectOrientedThinking.Loan;
 
+/**
+ *
+ * @author Abdulrahman
+ */
 public class Loan {
 
     private double annualInterestRate;
@@ -40,8 +44,8 @@ public class Loan {
         double totalPayment = getMonthlyPayment() * numberOfYears * 12;
         return totalPayment;
     }
-    
-    public java.util.Date getLoanDate(){
+
+    public java.util.Date getLoanDate() {
         return loanDate;
     }
 }
