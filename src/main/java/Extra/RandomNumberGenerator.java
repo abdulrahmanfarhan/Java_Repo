@@ -1,4 +1,4 @@
-package chapter9.objects_classes.ExtraProblemsAndCode;
+package Extra;
 
 /*
 (Use the Random class)

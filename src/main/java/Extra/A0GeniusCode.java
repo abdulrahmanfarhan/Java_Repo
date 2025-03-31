@@ -1,4 +1,4 @@
-package edu.zuj.term.extra;
+package Extra;
 import java.util.Scanner;
 public class A0GeniusCode {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package edu.zuj.term.extra;
+package Extra;
 import java.util.Scanner;
 public class HexagonAreaCalculator {
     public static void main(String[] args) {
