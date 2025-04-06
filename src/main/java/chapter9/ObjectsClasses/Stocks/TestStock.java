@@ -1,4 +1,4 @@
-package chapter9.objects_classes.Stocks;
+package chapter9.objectsClasses.Stocks;
 
 /**
  *

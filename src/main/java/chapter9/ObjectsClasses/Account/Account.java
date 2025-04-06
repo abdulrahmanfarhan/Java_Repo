@@ -1,4 +1,4 @@
-package chapter9.objects_classes.Account;
+package chapter9.objectsClasses.Account;
 
 import java.util.Date;
 import java.util.Scanner;

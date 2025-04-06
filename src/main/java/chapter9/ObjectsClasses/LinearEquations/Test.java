@@ -1,4 +1,4 @@
-package chapter9.objects_classes.LinearEquations;
+package chapter9.objectsClasses.LinearEquations;
 
 import java.util.Scanner;
 

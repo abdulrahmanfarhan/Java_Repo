@@ -1,3 +1,4 @@
+package chapter9.objectsClasses.rectangles;
 /*
 +-------------------------------+
 |          Rectangle             |

@@ -29,3 +29,6 @@ Introduction to java programming and data Structure book - By Danyal yang
 
 ------------------------------------------------------------------
 
+SOLID Principles  بالعربى
+
+	https://youtube.com/playlist?list=PLnqAlQ9hFYdflFSS4NigVB7aSoYPNwHTL&si=w4dRK45uWofQ4rTt

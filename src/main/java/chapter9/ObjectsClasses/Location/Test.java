@@ -1,4 +1,4 @@
-package chapter9.objects_classes.Location;
+package chapter9.objectsClasses.Location;
 
 /**
  *

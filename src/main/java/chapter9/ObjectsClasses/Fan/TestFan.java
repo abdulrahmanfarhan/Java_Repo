@@ -1,4 +1,4 @@
-package chapter9.objects_classes.Fan;
+package chapter9.objectsClasses.Fan;
 
 /**
  *

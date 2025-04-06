@@ -1,4 +1,4 @@
-package chapter9.objects_classes.CircleSummary;
+package chapter9.objectsClasses.CircleSummary;
 
 /**
  *

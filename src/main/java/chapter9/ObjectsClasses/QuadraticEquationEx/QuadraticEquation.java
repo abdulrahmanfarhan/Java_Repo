@@ -1,4 +1,4 @@
-package chapter9.objects_classes.QuadraticEquationEx;
+package chapter9.objectsClasses.QuadraticEquationEx;
 
 /**
  *
