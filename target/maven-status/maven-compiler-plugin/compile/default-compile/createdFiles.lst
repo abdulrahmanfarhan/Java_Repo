@@ -51,9 +51,11 @@ chapter9\objectsClasses\rectangles\TestRectangle.class
 chapter9\objectsClasses\BMICalculator\BMICalculator.class
 chapter9\objectsClasses\LinearEquations\Test.class
 Extra\TipCalculator.class
+chapter10\ObjectOrientedThinking\StackOfIntegers\Test.class
 chapter9\objectsClasses\BMICalculator\UserInput.class
 chapter9\objectsClasses\BMICalculator\Main.class
 chapter9\objectsClasses\Fan\Fan.class
+chapter10\ObjectOrientedThinking\StackOfIntegers\StackOfIntegers.class
 Extra\MeterToFeetConverter.class
 chapter9\objectsClasses\Stocks\TestStock.class
 Extra\MileToKilometerConverter.class
