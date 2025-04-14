@@ -1,9 +1,11 @@
+Table\Test.class
 chapter9\objectsClasses\CircleSummary\CreatArrayOfObj.class
 chapter9\objectsClasses\Location\Test.class
 chapter9\objectsClasses\Fan\TestFan.class
 Extra\PositiveNumberSum.class
 Extra\A0GeniusCode.class
 chapter9\objectsClasses\rectangles\Rectangle.class
+Extra\LargeFactorial.class
 Extra\AverageAccelerationCalculator.class
 Extra\RunwayLengthCalculator.class
 Extra\DrivingCostCalculator.class
@@ -48,6 +50,7 @@ Extra\ComputeArea.class
 chapter10\ObjectOrientedThinking\Loan\TestLoanClass.class
 chapter9\objectsClasses\Account\TestAccount.class
 chapter9\objectsClasses\rectangles\TestRectangle.class
+Table\Core.class
 chapter9\objectsClasses\BMICalculator\BMICalculator.class
 chapter9\objectsClasses\LinearEquations\Test.class
 Extra\TipCalculator.class

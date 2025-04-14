@@ -26,12 +26,11 @@ public class StackOfIntegers {
     }
 
     public void push(int value) {
-        elements[size] = value;
-        size++;
+        elements[size++] = value;
     }
 
     public int pop() {
-        int top = elements[size-1];
+        int top = elements[size - 1];
         size--;
         return top;
     }
