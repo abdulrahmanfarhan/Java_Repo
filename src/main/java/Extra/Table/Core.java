@@ -1,4 +1,4 @@
-package Table;
+package Extra.Table;
 
 /**
  *

@@ -1,4 +1,4 @@
-package Time;
+package chapter10.ObjectOrientedThinking.Time;
 public class UML {  
 }
 /*
