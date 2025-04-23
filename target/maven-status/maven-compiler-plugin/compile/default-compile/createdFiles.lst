@@ -1,3 +1,4 @@
+chapter10\ObjectOrientedThinking\PrimeNumbers\StackOfInteger.class
 chapter9\objectsClasses\CircleSummary\CreatArrayOfObj.class
 chapter9\objectsClasses\Location\Test.class
 chapter9\objectsClasses\Fan\TestFan.class
@@ -28,6 +29,7 @@ Extra\SquareMeterToPingConverter.class
 chapter9\objectsClasses\StopWatch\StopWatch.class
 chapter9\objectsClasses\Location\Location.class
 chapter9\objectsClasses\Stocks\stock.class
+chapter10\ObjectOrientedThinking\PrimeNumbers\Test.class
 chapter10\ObjectOrientedThinking\Time\UML.class
 Extra\Gregorian_Calendar.class
 Extra\Table\Core.class
@@ -36,6 +38,7 @@ chapter9\objectsClasses\StopWatch\TestStopWatch.class
 chapter9\objectsClasses\CircleSummary\Circle.class
 Extra\BMI_Calculator.class
 chapter10\ObjectOrientedThinking\Time\Time.class
+chapter10\ObjectOrientedThinking\PrimeNumbers\PrimeNumbers.class
 Extra\RandomNumberGenerator.class
 chapter9\objectsClasses\DiamondPattern\DiamondPattern.class
 Extra\EnergyCalculator.class
