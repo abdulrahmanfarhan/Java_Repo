@@ -72,4 +72,17 @@ public class Time {
         return "Time{" + "hour=" + hour + ": minute=" + minute + ": second=" + second + '}';
     }
 
+    public static int parseInt(char[] a) {
+        int b = a[0] - '0';
+        for (int i = 1; i < a.length; i++) {
+            b *= 10;
+            b += a[i] - '0';
+        }
+        return b;
+        //return Integer.parseInt(new String(a)); is true.
+    }
+
+    public static int parseInt(String a) {
+        return Integer.parseInt(a);
+    }
 }
