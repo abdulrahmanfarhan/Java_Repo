@@ -295,6 +295,9 @@ public class EnglishLettersArrays {
                     case 'Z':
                         System.out.print(Z[j]);
                         break;
+                    case ' ':
+                        System.out.print("     ");
+                        break;
                 }
             }
             System.out.println("");

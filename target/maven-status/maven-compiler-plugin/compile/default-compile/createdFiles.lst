@@ -4,12 +4,15 @@ chapter9\objectsClasses\Location\Test.class
 chapter9\objectsClasses\Fan\TestFan.class
 Extra\PositiveNumberSum.class
 Extra\A0GeniusCode.class
+chapter10\ObjectOrientedThinking\ATM\ATM.class
 chapter9\objectsClasses\rectangles\Rectangle.class
 Extra\AverageAccelerationCalculator.class
 Extra\RunwayLengthCalculator.class
+Extra\utils\Validation.class
 Extra\DrivingCostCalculator.class
 chapter10\ObjectOrientedThinking\course\Course.class
 Extra\EnglishLettersArrays\EnglishLettersArrays.class
+chapter10\ObjectOrientedThinking\ATM\Account.class
 Extra\EquilateralTriangleCalculator.class
 Extra\TimeZoneConverter.class
 chapter9\objectsClasses\QuadraticEquationEx\Test.class
