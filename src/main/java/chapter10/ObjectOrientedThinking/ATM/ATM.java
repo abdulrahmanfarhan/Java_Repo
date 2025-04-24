@@ -1,8 +1,6 @@
 package chapter10.ObjectOrientedThinking.ATM;
 
 import Extra.utils.Validation;
-import Extra.EnglishLettersArrays.EnglishLettersArrays;
-
 public class ATM {
 
     public static void main(String[] args) {
