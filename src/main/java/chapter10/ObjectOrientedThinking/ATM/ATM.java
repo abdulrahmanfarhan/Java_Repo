@@ -1,6 +1,7 @@
 package chapter10.ObjectOrientedThinking.ATM;
 
 import Extra.utils.Validation;
+
 public class ATM {
 
     public static void main(String[] args) {

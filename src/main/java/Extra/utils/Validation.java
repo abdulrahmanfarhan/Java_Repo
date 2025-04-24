@@ -18,6 +18,7 @@ public class Validation {
     public static double getDoubleInRange(double from, double to) {
         double input;
         do {
+            System.out.print("Enter the number between(" + from + ") and (" + to + "):");
             input = scanner.nextDouble();
         } while (input < from || input > to);
         return input;
@@ -26,6 +27,7 @@ public class Validation {
     public static int getIntFrom(int min) {
         int input;
         do {
+            System.out.print("Enter a number greater than(" + min + ") :");
             input = scanner.nextInt();
         } while (input < min);
         return input;
@@ -34,6 +36,7 @@ public class Validation {
     public static double getDoubleFrom(double min) {
         double input;
         do {
+            System.out.print("Enter a number greater than(" + min + ") :");
             input = scanner.nextDouble();
         } while (input < min);
         return input;
@@ -42,6 +45,7 @@ public class Validation {
     public static int getIntTo(int max) {
         int input;
         do {
+            System.out.print("Enter the number smaller than (" + max + ") :");
             input = scanner.nextInt();
         } while (input > max);
         return input;
@@ -50,6 +54,7 @@ public class Validation {
     public static double getDoubleTo(double max) {
         double input;
         do {
+            System.out.print("Enter the number smaller than (" + max + ") :");
             input = scanner.nextDouble();
         } while (input > max);
         return input;
