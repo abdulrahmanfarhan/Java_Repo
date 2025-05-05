@@ -1,4 +1,4 @@
-# Optimized Java and Spring Boot Study Plan (9 Months)
+# Java and Spring Boot Study Plan (9 Months)
 
 **Focus Areas**: Core Java, OOP, Spring Boot, Databases, REST APIs, Security, Docker, and CI/CD  
 **Total Duration**: 9 months (~10-15 hours/week)  
@@ -200,4 +200,4 @@
 
 ---
 
-This revised plan integrates the *Design Patterns in Java* chapters (Ch5 and Ch9) into Phase 1, replacing *Head First Design Patterns*, while maintaining the focus on practical application through the Strategy Pattern in the mini-project. The rest of the plan remains consistent, ensuring a balanced, industry-relevant learning path. Adjust weekly hours based on availability, and prioritize GitHub documentation for a strong portfolio! 🚀
+## **Abdulrahman Farhan**
