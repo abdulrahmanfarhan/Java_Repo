@@ -2,7 +2,7 @@
 
 **Focus Areas**: Core Java, OOP, Spring Boot, Databases, REST APIs, Security, Docker, and CI/CD  
 **Total Duration**: 9 months (~10-15 hours/week)  
-- **Phase 1**: Months 1-3 (Core Java, OOP, Git)  
+- **Phase 1**: Months 1-3 (Core Java, OOP, Git, Design Patterns)  
 - **Phase 2**: Months 4-6 (Spring Boot, Testing, Security)  
 - **Phase 3**: Months 7-8 (Databases, Data Structures)  
 - **Phase 4**: Month 9 (Advanced APIs, Docker, CI/CD)
@@ -13,12 +13,13 @@
 
 **Objectives**:  
 - Master Java fundamentals and OOP principles.  
-- Learn version control with Git and basic Design Patterns.  
+- Learn version control with Git.  
+- Understand key Design Patterns using *Design Patterns in Java*.  
 - Build a small project with input validation for security awareness.  
 
 **Study Materials**:  
 📘 *Introduction to Java Programming – Y. Daniel Liang*  
-📘 *Head First Design Patterns*  
+📘 *Design Patterns in Java – Steven John Metsker & William Wake*  
 📘 *Git Documentation* (online, free)
 
 | Week | Topic | Source | Duration | Notes |
@@ -34,7 +35,12 @@
 | 9    | Custom Classes | Liang Ch9 | 1 week | Class design |
 | 10   | Inheritance | Liang Ch10 | 1 week | Extend classes |
 | 11   | Polymorphism, Interfaces | Liang Ch11, Ch13 | 1 week | Flexible scheduling if needed |
-| 12   | Exception Handling, Strategy Pattern | Liang Ch12, Head First Ch1 | 1 week | Input validation basics |
+| 12   | Exception Handling, Design Patterns Intro, Strategy Pattern | Liang Ch12, Design Patterns in Java Ch5, Ch9 | 1 week | Input validation, Strategy Pattern application |
+
+**Design Patterns Covered (from *Design Patterns in Java*)**:  
+- **Week 12**:  
+  - Ch5: *An Introduction to Design Patterns* (overview, importance, and context).  
+  - Ch9: *The Strategy Pattern* (handling varying algorithms, applied to a simple use case).  
 
 **Practical Activities**:  
 - **Coding Exercises**: Solve 10 LeetCode Easy problems (arrays, loops).  
@@ -42,6 +48,7 @@
 - **Mini-Project (Week 12)**: Build a Library Management System (Java console app) with:  
   - OOP (inheritance, polymorphism).  
   - Basic input validation (e.g., check for null/empty inputs).  
+  - Implementation of the Strategy Pattern (e.g., different sorting strategies for books).  
   - Version control using Git.  
   - **Tools**: IntelliJ IDEA, Git.  
   - **Output**: GitHub repo with documented code.
@@ -186,11 +193,11 @@
 ## **Timeline Summary**
 | Phase | Duration | Key Additions |  
 |-------|----------|---------------|  
-| 1 | Months 1-3 | Git basics, input validation |  
+| 1 | Months 1-3 | Git basics, input validation, Strategy Pattern |  
 | 2 | Months 4-6 | Spring Security, Maven/Gradle, Mockito |  
 | 3 | Months 7-8 | Java Collections, Spring Data JPA |  
 | 4 | Month 9 | Swagger, OAuth2/JWT, Docker Compose, CI/CD |
 
 ---
 
-This optimized plan ensures a balance of theory, hands-on practice, and modern tools, preparing you for real-world Java and Spring Boot development. Adjust weekly hours based on availability, but prioritize projects and GitHub documentation for a strong portfolio! 🚀
+This revised plan integrates the *Design Patterns in Java* chapters (Ch5 and Ch9) into Phase 1, replacing *Head First Design Patterns*, while maintaining the focus on practical application through the Strategy Pattern in the mini-project. The rest of the plan remains consistent, ensuring a balanced, industry-relevant learning path. Adjust weekly hours based on availability, and prioritize GitHub documentation for a strong portfolio! 🚀
