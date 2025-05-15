@@ -199,5 +199,3 @@
 | 4 | Month 9 | Swagger, OAuth2/JWT, Docker Compose, CI/CD |
 
 ---
-
-## **Abdulrahman Farhan**
