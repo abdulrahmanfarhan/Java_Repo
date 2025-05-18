@@ -1,4 +1,4 @@
-package chapter11.InheritanceAndPolymorphism;
+package chapter11.InheritanceAndPolymorphism.GeometricObject;
 
 /**
  *
@@ -16,8 +16,7 @@ public class Circle extends GeometricObject {
     }
 
     public Circle(double radius, String color, boolean filled) {
-        setColor(color);
-        setFilled(filled);
+        super(color, filled);
         setRadius(radius);
     }
 
@@ -42,7 +41,7 @@ public class Circle extends GeometricObject {
     }
 
     public void printCircle() {
-        System.out.println("The circle is created " + getDateCreated() + " and the radius is " + radius);
+        System.out.println("The circle is created " + super.getDateCreated() + " and the radius is " + radius);
     }
 
 }

@@ -1,4 +1,4 @@
-package chapter11.InheritanceAndPolymorphism;
+package chapter11.InheritanceAndPolymorphism.GeometricObject;
 
 import java.util.Date;
 

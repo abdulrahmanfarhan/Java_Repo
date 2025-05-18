@@ -1,4 +1,4 @@
-package chapter11.InheritanceAndPolymorphism;
+package chapter11.InheritanceAndPolymorphism.GeometricObject;
 
 /**
  *
@@ -18,8 +18,7 @@ public class Rectangle extends GeometricObject {
     }
 
     public Rectangle(double width, double heigth, String color, boolean filled) {
-        setColor(color);
-        setFilled(filled);
+        super(color, filled);
         setHeight(height);
         setWidth(width);
     }
