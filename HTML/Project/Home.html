@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceHub - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #1a2a44;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container h1 {
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #00aaff;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            height: 500px;
+            background-color: #f4f7fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        .features h2 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            width: 30%;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            text-align: center;
+            display: inline-block;
+            margin: 0 1.5%;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .latest-news {
+            padding: 40px 20px;
+            background-color: #f4f7fa;
+        }
+
+        .latest-news h2 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .news-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .news-item p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .call-to-action {
+            padding: 40px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .call-to-action h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .call-to-action p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #1a2a44;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .footer-links ul li a:hover {
+            color: #00aaff;
+        }
+
+        .social-media p {
+            font-size: 14px;
+        }
+
+        .contact-info p {
+            font-size: 14px;
+        }
+        .logout{
+            background-color: #ff0000;
+            color: white;
+            padding: 10px;
+        }
+        .logout:hover{
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="Home.html" style="text-decoration: none; color: white;">
+                <h1>FinanceHub</h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html" class="active">Home</a></li>
+                <li><a href="Markets.html">Markets</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Banking.html">Banking</a></li>
+                <li><a href="pay.html">payment</a></li>
+                <li><a href="login.html" class="logout">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Master Your Financial Journey</h2>
+            <p>Get real-time insights, powerful tools, and the latest financial news to stay ahead.</p>
+        </section>
+
+        <section class="features">
+            <h2>Why Choose FinanceHub?</h2>
+            <div class="feature-card">
+                <h3>Market Insights</h3>
+                <p>Access live data on stocks, crypto, and forex to make informed decisions.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Trading Tools</h3>
+                <p>Simplify your trading with advanced analytics and portfolio management.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Financial News</h3>
+                <p>Stay updated with breaking news and expert analysis.</p>
+            </div>
+        </section>
+
+        <section class="latest-news">
+            <h2>Top Stories</h2>
+            <article class="news-item">
+                <h3>Stock Market Hits Record High</h3>
+                <p>Global indices soar as investor confidence grows in 2025.</p>
+            </article>
+            <article class="news-item">
+                <h3>Crypto Market Update</h3>
+                <p>Bitcoin and Ethereum show strong gains amid regulatory clarity.</p>
+            </article>
+        </section>
+
+        <section class="call-to-action">
+            <h2>Join Our Community</h2>
+            <p>Sign up today to unlock premium tools and exclusive insights.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <ul>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <p>Follow Us: <a href="https://www.instagram.com/farhan.cc9/" target="_blank"
+                    style="text-decoration: none; color: white;">Instagram</a>
+                &nbsp;|&nbsp;
+                <a href="https://linkedin.com/in/abdulrahmanfarhan" target="_blank"
+                    style="text-decoration: none; color: white;">Linkedin</a>
+                &nbsp;|&nbsp;
+                <a href="https://github.com/abdulrahmanfarhan" target="_blank"
+                    style="text-decoration: none; color: white;">github</a>
+            </p>
+        </div>
+        <div class="contact-info">
+            <p>Email: abdulrahmanfarhan1985@gmail.com</p>
+            <p>Phone: +962780546803</p>
+        </div>
+    </footer>
+</body>
+
+</html>

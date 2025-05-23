@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceHub - Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f4f7fa 0%, #e0e7ff 100%);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #1a2a44;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container h1 {
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #00aaff;
+            transform: scale(1.1);
+        }
+
+        .contact-section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-section h1 {
+            font-size: 36px;
+            font-weight: 900;
+            color: #1a2a44;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.8s ease-in-out;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            color: #1a2a44;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #00aaff;
+            box-shadow: 0 0 8px rgba(0, 170, 255, 0.3);
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100%;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0088cc;
+            transform: scale(1.05);
+        }
+
+        section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .map-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a2a44;
+            margin-bottom: 20px;
+        }
+
+        .map-section img {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .map-section img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            padding: 20px 40px;
+            background-color: #1a2a44;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #00aaff;
+        }
+
+        .social-media p,
+        .contact-info p {
+            font-size: 14px;
+
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image img {
+                max-width: 100%;
+                height: 200px;
+            }
+
+            .team-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-card img {
+                height: 150px;
+            }
+        }
+
+        .logout {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px;
+        }
+
+        .logout:hover {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="Home.html" style="text-decoration: none; color: white;">
+                <h1>FinanceHub</h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Markets.html">Markets</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Banking.html">Banking</a></li>
+                <li><a href="pay.html">payment</a></li>
+                <li><a href="login.html" class="logout">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h1>Contact Us</h1>
+            <p>We're here to help! Reach out to us with any questions or inquiries.</p>
+
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p><strong>Email:</strong> <a href="mailto:support@financehub.com">support@financehub.com</a></p>
+                    <p><strong>Phone:</strong> +1-800-123-4567</p>
+                    <p><strong>Address:</strong> FinanceHub, 123 Financial Street, Suite 100, New York, NY 10001, USA
+                    </p>
+                    <p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM (EST)</p>
+                    <p>Follow us on social media: <a href="#">Twitter</a> | <a href="#">LinkedIn</a> | <a
+                            href="#">Instagram</a></p>
+                </div>
+            </div>
+
+            <div class="map-section">
+                <h2>Our Location</h2>
+                <img src="map-image.jpg" alt="FinanceHub Location Map">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <ul>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <p>Follow Us: <a href="https://www.instagram.com/farhan.cc9/" target="_blank"
+                    style="text-decoration: none; color: white;">Instagram</a>
+                &nbsp;|&nbsp;
+                <a href="https://linkedin.com/in/abdulrahmanfarhan" target="_blank"
+                    style="text-decoration: none; color: white;">Linkedin</a>
+                &nbsp;|&nbsp;
+                <a href="https://github.com/abdulrahmanfarhan" target="_blank"
+                    style="text-decoration: none; color: white;">github</a>
+            </p>
+        </div>
+        <div class="contact-info">
+            <p>Email: abdulrahmanfarhan1985@gmail.com</p>
+            <p>Phone: +962780546803</p>
+        </div>
+    </footer>
+</body>
+
+</html>

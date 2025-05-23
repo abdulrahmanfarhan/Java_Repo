@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceHub - News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f4f7fa 0%, #e0e7ff 100%);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #1a2a44;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container h1 {
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #00aaff;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            height: 500px;
+            background-color: #f4f7fa;
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(26, 42, 68, 0.7), transparent);
+            z-index: 1;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            color: #fff;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content a {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero-content a:hover {
+            background-color: #0088cc;
+            transform: translateY(-3px);
+        }
+
+        .news-section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .news-section h2 {
+            font-size: 36px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a2a44;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.8s ease-in-out;
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 170, 255, 0.2);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .news-card-content {
+            padding: 20px;
+        }
+
+        .news-card-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a2a44;
+        }
+
+        .news-card-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .news-card-content a {
+            display: inline-block;
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .news-card-content a:hover {
+            color: #0088cc;
+        }
+
+        .call-to-action {
+            padding: 60px 40px;
+            background-color: #1a2a44;
+            text-align: center;
+            color: #fff;
+        }
+
+        .call-to-action h2 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .call-to-action p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .call-to-action a {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .call-to-action a:hover {
+            background-color: #0088cc;
+            transform: scale(1.05);
+        }
+
+        footer {
+            padding: 20px 40px;
+            background-color: #1a2a44;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #00aaff;
+        }
+
+        .social-media p,
+        .contact-info p {
+            font-size: 14px;
+        }
+
+        .logout {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px;
+        }
+
+        .logout:hover {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="Home.html" style="text-decoration: none; color: white;">
+                <h1>FinanceHub</h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Markets.html">Markets</a></li>
+                <li><a href="News.html" class="active">News</a></li>
+                <li><a href="Banking.html">Banking</a></li>
+                <li><a href="pay.html">payment</a></li>
+                <li><a href="login.html" class="logout">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="hero-image.jpg" alt="Featured News Image">
+            <div class="hero-content">
+                <h2>Global Markets Surge Amid Economic Optimism</h2>
+                <p>Stay informed with the latest financial news and insights from around the world.</p>
+                <a href="#">Read More</a>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <h2>Latest Financial News</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="article1.jpg" alt="Article 1 Image" width="100%" height="200">
+                    <div class="news-card-content">
+                        <h3>Tech Stocks Lead Market Rally in Q2 2025</h3>
+                        <p>Major tech companies drive unprecedented gains as innovation fuels investor confidence.</p>
+                        <a href="#">Read Full Story</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="article2.jpg" alt="Article 2 Image" width="100%" height="200">
+                    <div class="news-card-content">
+                        <h3>Central Banks Tighten Monetary Policy</h3>
+                        <p>Interest rate hikes signal a shift in global economic strategies.</p>
+                        <a href="#">Read Full Story</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="article3.jpg" alt="Article 3 Image" width="100%" height="200">
+                    <div class="news-card-content">
+                        <h3>Cryptocurrency Regulations Take Shape</h3>
+                        <p>New policies aim to balance innovation and investor protection in 2025.</p>
+                        <a href="#">Read Full Story</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="article4.jpg" alt="Article 4 Image" width="100%" height="200">
+                    <div class="news-card-content">
+                        <h3>Commodities Boom: Gold Hits Record High</h3>
+                        <p>Investors flock to safe-haven assets amid market volatility.</p>
+                        <a href="#">Read Full Story</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <h2>Stay Ahead with FinanceHub</h2>
+            <p>Subscribe for exclusive news updates and market insights delivered to your inbox.</p>
+            <a href="#">Subscribe Now</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <ul>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <p>Follow Us: <a href="https://www.instagram.com/farhan.cc9/" target="_blank"
+                    style="text-decoration: none; color: white;">Instagram</a>
+                &nbsp;|&nbsp;
+                <a href="https://linkedin.com/in/abdulrahmanfarhan" target="_blank"
+                    style="text-decoration: none; color: white;">Linkedin</a>
+                &nbsp;|&nbsp;
+                <a href="https://github.com/abdulrahmanfarhan" target="_blank"
+                    style="text-decoration: none; color: white;">github</a>
+            </p>
+        </div>
+        <div class="contact-info">
+            <p>Email: abdulrahmanfarhan1985@gmail.com</p>
+            <p>Phone: +962780546803</p>
+        </div>
+    </footer>
+</body>
+
+</html>

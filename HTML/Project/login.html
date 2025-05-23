@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceHub - Log In</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f4f7fa 0%, #e0e7ff 100%);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #1a2a44;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container h1 {
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #00aaff;
+            transform: scale(1.1);
+        }
+
+        .login-section {
+            padding: 60px 40px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            animation: slideUp 0.8s ease-in-out;
+        }
+
+        .login-form h1 {
+            font-size: 32px;
+            font-weight: 900;
+            color: #1a2a44;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            color: #1a2a44;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #00aaff;
+            box-shadow: 0 0 8px rgba(0, 170, 255, 0.3);
+            outline: none;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .form-options label {
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-options input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .form-options a {
+            font-size: 14px;
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .form-options a:hover {
+            color: #0088cc;
+        }
+
+        .login-btn {
+            display: inline-block;
+            padding: 12px;
+            background-color: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100%;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background-color: #0088cc;
+            transform: scale(1.05);
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-link p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .signup-link a {
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link a:hover {
+            color: #0088cc;
+        }
+
+        footer {
+            padding: 20px 40px;
+            background-color: #1a2a44;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #00aaff;
+        }
+
+        .social-media p,
+        .contact-info p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="Home.html" style="text-decoration: none; color: white;">
+                <h1>FinanceHub</h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Markets.html">Markets</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Banking.html">Banking</a></li>
+                <li><a href="pay.html">payment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <div class="login-form">
+                <h1>Log In</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <br>
+                    <a href="Home.html" class="login-btn">Log in</a>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <ul>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <p>Follow Us: <a href="https://www.instagram.com/farhan.cc9/" target="_blank"
+                    style="text-decoration: none; color: white;">Instagram</a>
+                &nbsp;|&nbsp;
+                <a href="https://linkedin.com/in/abdulrahmanfarhan" target="_blank"
+                    style="text-decoration: none; color: white;">Linkedin</a>
+                &nbsp;|&nbsp;
+                <a href="https://github.com/abdulrahmanfarhan" target="_blank"
+                    style="text-decoration: none; color: white;">github</a>
+            </p>
+        </div>
+        <div class="contact-info">
+            <p>Email: abdulrahmanfarhan1985@gmail.com</p>
+            <p>Phone: +962780546803</p>
+        </div>
+    </footer>
+</body>
+
+</html>

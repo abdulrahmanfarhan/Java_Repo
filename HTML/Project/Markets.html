@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceHub - Trading Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #1a2a44;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container h1 {
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #00aaff;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            background-image: url('img/1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            height: 620px;
+            background-color: #f4f7fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .trading-section {
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        .trading-section h2 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .asset-table {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .asset-table th,
+        .asset-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .asset-table th {
+            background-color: #1a2a44;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .asset-table tr:hover {
+            background-color: #f4f7fa;
+        }
+
+        .asset-table .price {
+            color: #333;
+            font-weight: 700;
+        }
+
+        .asset-table .change-positive {
+            color: #28a745;
+        }
+
+        .asset-table .change-negative {
+            color: #dc3545;
+        }
+
+        .buy-btn,
+        .sell-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+
+        .buy-btn {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .buy-btn:hover {
+            background-color: #218838;
+        }
+
+        .sell-btn {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .sell-btn:hover {
+            background-color: #c82333;
+        }
+
+        .call-to-action {
+            background-image: url('img/2.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .call-to-action h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .call-to-action p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #0088cc;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #1a2a44;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .footer-links ul li a:hover {
+            color: #00aaff;
+        }
+
+        .social-media p {
+            font-size: 14px;
+        }
+
+        .contact-info p {
+            font-size: 14px;
+        }
+
+        .logout {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px;
+        }
+
+        .logout:hover {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+        }
+
+        .call-to-action p,
+        h2 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        .hero h1,
+        p {}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="Home.html" style="text-decoration: none; color: white;">
+                <h1>FinanceHub</h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Markets.html" class="active">Markets</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Banking.html">Banking</a></li>
+                <li><a href="pay.html">payment</a></li>
+                <li><a href="login.html" class="logout">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+        </section>
+
+        <section class="trading-section">
+            <h2>Stocks & Commodities</h2>
+            <table class="asset-table">
+                <thead>
+                    <tr>
+                        <th>Stock</th>
+                        <th>Price</th>
+                        <th>Change</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apple Inc. (AAPL)</td>
+                        <td class="price">$150.25</td>
+                        <td class="change-positive">+2.3%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tesla Inc. (TSLA)</td>
+                        <td class="price">$720.10</td>
+                        <td class="change-negative">-1.5%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Microsoft Corp. (MSFT)</td>
+                        <td class="price">$305.80</td>
+                        <td class="change-positive">+0.8%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Alphabet Inc. (GOOGL)</td>
+                        <td class="price">$1117.25</td>
+                        <td class="change-positive">+1.55%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Amazon.com, Inc. (AMZN)</td>
+                        <td class="price">$442.34</td>
+                        <td class="change-positive">+3.28%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>NVIDIA Corporation (NVDA)</td>
+                        <td class="price">$2235.66</td>
+                        <td class="change-negative">-0.07%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Meta Platforms, Inc (META)</td>
+                        <td class="price">$2008.33</td>
+                        <td class="change-negative">-3.46%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Berkshire Hathaway Inc. (BRK)</td>
+                        <td class="price">$2969.06 </td>
+                        <td class="change-negative">-1.80%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>JPMorgan Chase & Co. (JPM)</td>
+                        <td class="price">$2179.17</td>
+                        <td class="change-positive">+0.35%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Visa Inc. (V)</td>
+                        <td class="price">$676.82</td>
+                        <td class="change-positive">+3.90%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gold (XAU/USD)</td>
+                        <td class="price">$1,850.40</td>
+                        <td class="change-positive">+1.2%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Silver (XAG/USD)</td>
+                        <td class="price">$22.15</td>
+                        <td class="change-negative">-0.9%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Crude Oil (WTI)</td>
+                        <td class="price">$75.30</td>
+                        <td class="change-positive">+1.7%</td>
+                        <td>
+                            <a href="pay.html" class="buy-btn">Buy</a>
+                            <a href="pay.html" class="sell-btn">Sell</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="call-to-action">
+            <h2>Abdulrahman platform</h2>
+            <p>Join our platform and take control of your financial future.</p>
+            <a href="pay.html" class="cta-button">Start trading</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <ul>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <p>Follow Us: <a href="https://www.instagram.com/farhan.cc9/" target="_blank"
+                    style="text-decoration: none; color: white;">Instagram</a>
+                &nbsp;|&nbsp;
+                <a href="https://linkedin.com/in/abdulrahmanfarhan" target="_blank"
+                    style="text-decoration: none; color: white;">Linkedin</a>
+                &nbsp;|&nbsp;
+                <a href="https://github.com/abdulrahmanfarhan" target="_blank"
+                    style="text-decoration: none; color: white;">github</a>
+            </p>
+        </div>
+        <div class="contact-info">
+            <p>Email: abdulrahmanfarhan1985@gmail.com</p>
+            <p>Phone: +962780546803</p>
+        </div>
+    </footer>
+</body>
+
+</html>
