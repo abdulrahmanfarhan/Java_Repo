@@ -5,6 +5,7 @@ import com.bank.transactions.Transaction;
 import com.bank.utilities.InterestCalculator;
 
 public class SavingAccount extends Account {
+
     private double annualInterestRate;
     private double withdrawLimit;
 

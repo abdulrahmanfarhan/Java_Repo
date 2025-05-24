@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Zaytoonah Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .section {
+            transition: all 0.5s ease;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        .section.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        .btn:hover::before {
+            left: 100%;
+        }
+        .header {
+            background: linear-gradient(to right, #1e40af, #3b82f6);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+        input, select {
+            transition: all 0.3s ease;
+        }
+        input:focus, select:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        .center-section {
+            min-height: 70vh;
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .status-message {
+            color: #e3342f;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .card {
+                max-width: 95vw !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center">
+    <header class="header w-full py-6 text-white text-center">
+        <h1 class="text-4xl font-bold tracking-tight">Al-Zaytoonah Bank</h1>
+        <p class="text-lg mt-2 opacity-90">Your trusted banking solution</p>
+        <p class="text-lg mt-2 opacity-90">By <a href="https://www.linkedin.com/in/abdulrahmanfarhan/" target="_blank">@Abdulrahman_Farhan</a></p>
+    </header>
+    <main class="container mx-auto p-6">
+        <div id="main-menu" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 section active">
+            <button onclick="showSection('register-customer')" class="btn bg-blue-600 text-white p-4 rounded-xl font-semibold hover:bg-blue-700">Register New Customer</button>
+            <button onclick="showSection('create-account')" class="btn bg-blue-600 text-white p-4 rounded-xl font-semibold hover:bg-blue-700">Create New Account</button>
+            <button onclick="showSection('manage-accounts')" class="btn bg-blue-600 text-white p-4 rounded-xl font-semibold hover:bg-blue-700">Manage Accounts</button>
+            <button onclick="showSection('currency-conversion')" class="btn bg-blue-600 text-white p-4 rounded-xl font-semibold hover:bg-blue-700">Currency Conversion</button>
+            <button onclick="displayBankInfo()" class="btn bg-blue-600 text-white p-4 rounded-xl font-semibold hover:bg-blue-700">Display Bank Info</button>
+            <button onclick="showSection('about')" class="btn bg-blue-600 text-white p-4 rounded-xl font-semibold hover:bg-blue-700">About</button>
+        </div>
+
+        <!-- Register Customer Section -->
+        <div id="register-customer" class="hidden card p-8 mt-6 w-full max-w-md section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Register New Customer</h2>
+            <div class="space-y-5">
+                <input id="customer-name" type="text" placeholder="Customer Name" class="w-full p-3 border rounded-lg focus:outline-none">
+                <input id="customer-email" type="email" placeholder="Email (optional)" class="w-full p-3 border rounded-lg focus:outline-none">
+                <input id="customer-phone" type="text" placeholder="Phone (optional)" class="w-full p-3 border rounded-lg focus:outline-none">
+                <p id="register-error" class="status-message hidden"></p>
+                <button onclick="registerCustomer()" class="btn bg-green-600 text-white p-3 rounded-lg w-full font-semibold hover:bg-green-700">Register</button>
+                <button onclick="backToMenu()" class="btn bg-gray-600 text-white p-3 rounded-lg w-full font-semibold hover:bg-gray-700">Back</button>
+            </div>
+        </div>
+
+        <!-- Create Account Section -->
+        <div id="create-account" class="hidden card p-8 mt-6 w-full max-w-md section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Create New Account</h2>
+            <div class="space-y-5">
+                <select id="customer-select" class="w-full p-3 border rounded-lg focus:outline-none">
+                    <option value="">Select Customer</option>
+                </select>
+                <select id="account-type" class="w-full p-3 border rounded-lg focus:outline-none">
+                    <option value="">Select Account Type</option>
+                    <option value="Saving">Saving Account</option>
+                    <option value="Checking">Checking Account</option>
+                    <option value="FixedDeposit">Fixed Deposit Account</option>
+                    <option value="Islamic">Islamic Account</option>
+                    <option value="Loan">Loan</option>
+                </select>
+                <input id="initial-balance" type="number" placeholder="Initial Balance" class="w-full p-3 border rounded-lg focus:outline-none">
+                <input id="account-specific" type="number" placeholder="Specific Parameter (e.g., Withdraw Limit)" class="w-full p-3 border rounded-lg focus:outline-none">
+                <input id="interest-rate" type="number" step="0.01" placeholder="Interest/Profit Rate (e.g., 0.05)" class="w-full p-3 border rounded-lg focus:outline-none hidden">
+                <input id="term-months" type="number" placeholder="Term in Months (for Loan/Fixed Deposit)" class="w-full p-3 border rounded-lg focus:outline-none hidden">
+                <p id="create-account-error" class="status-message hidden"></p>
+                <button onclick="createAccount()" class="btn bg-green-600 text-white p-3 rounded-lg w-full font-semibold hover:bg-green-700">Create Account</button>
+                <button onclick="backToMenu()" class="btn bg-gray-600 text-white p-3 rounded-lg w-full font-semibold hover:bg-gray-700">Back</button>
+            </div>
+        </div>
+
+        <!-- Manage Accounts Section -->
+        <div id="manage-accounts" class="hidden card p-8 mt-6 w-full max-w-md section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Manage Accounts</h2>
+            <select id="manage-customer-select" class="w-full p-3 border rounded-lg focus:outline-none mb-4">
+                <option value="">Select Customer</option>
+            </select>
+            <p id="customer-status" class="status-message hidden"></p>
+            <select id="account-select" class="w-full p-3 border rounded-lg focus:outline-none mb-4">
+                <option value="">Select Account</option>
+            </select>
+            <p id="account-status" class="status-message hidden"></p>
+            <button onclick="backToMenu()" class="btn bg-gray-600 text-white p-3 rounded-lg w-full mb-4 font-semibold hover:bg-gray-700">Back</button>
+            <div id="account-actions" class="space-y-4 hidden">
+                <button onclick="showDeposit()" class="btn bg-blue-600 text-white p-3 rounded-lg w-full font-semibold hover:bg-blue-700">Deposit</button>
+                <button onclick="showWithdraw()" class="btn bg-blue-600 text-white p-3 rounded-lg w-full font-semibold hover:bg-blue-700">Withdraw</button>
+                <button onclick="showTransactions()" class="btn bg-blue-600 text-white p-3 rounded-lg w-full font-semibold hover:bg-blue-700">View Transactions</button>
+                <button onclick="showCalculate()" class="btn bg-blue-600 text-white p-3 rounded-lg w-full font-semibold hover:bg-blue-700">Calculate Interest/Profit/Payment</button>
+            </div>
+        </div>
+
+        <!-- Deposit/Withdraw Section -->
+        <div id="deposit-withdraw" class="hidden card p-8 mt-6 w-full max-w-md section">
+            <h2 id="action-title" class="text-2xl font-bold mb-6 text-gray-800"></h2>
+            <input id="action-amount" type="number" placeholder="Amount" class="w-full p-3 border rounded-lg focus:outline-none mb-4">
+            <p id="action-error" class="status-message hidden"></p>
+            <button id="action-submit" class="btn bg-green-600 text-white p-3 rounded-lg w-full font-semibold hover:bg-green-700">Submit</button>
+            <button onclick="backToManageAccounts()" class="btn bg-gray-600 text-white p-3 rounded-lg w-full mt-4 font-semibold hover:bg-gray-700">Back</button>
+        </div>
+
+        <!-- Transactions Section -->
+        <div id="transactions" class="hidden card p-8 mt-6 w-full max-w-md section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Transactions</h2>
+            <div id="transaction-list" class="space-y-3"></div>
+            <button onclick="backToManageAccounts()" class="btn bg-gray-600 text-white p-3 rounded-lg w-full mt-4 font-semibold hover:bg-gray-700">Back</button>
+        </div>
+
+        <!-- Calculate Interest/Profit/Payment Section -->
+        <div id="calculate" class="hidden card p-8 mt-6 w-full max-w-md section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Calculate Interest/Profit/Payment</h2>
+            <p id="calculate-result" class="text-lg text-gray-700"></p>
+            <button onclick="backToManageAccounts()" class="btn bg-gray-600 text-white p-3 rounded-lg w-full mt-4 font-semibold hover:bg-gray-700">Back</button>
+        </div>
+
+        <!-- Currency Conversion Section -->
+        <div id="currency-conversion" class="hidden card p-8 mt-6 w-full max-w-md section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Currency Conversion</h2>
+            <select id="conversion-type" class="w-full p-3 border rounded-lg focus:outline-none mb-4">
+                <option value="usd-to-jod">USD to JOD</option>
+                <option value="jod-to-usd">JOD to USD</option>
+            </select>
+            <input id="conversion-amount" type="number" placeholder="Amount" class="w-full p-3 border rounded-lg focus:outline-none mb-4">
+            <p id="conversion-result" class="text-lg text-gray-700 mt-4"></p>
+            <button onclick="convertCurrency()" class="btn bg-green-600 text-white p-3 rounded-lg w-full font-semibold hover:bg-green-700">Convert</button>
+            <button onclick="backToMenu()" class="btn bg-gray-600 text-white p-3 rounded-lg w-full mt-4 font-semibold hover:bg-gray-700">Back</button>
+        </div>
+
+        <!-- Bank Info Section -->
+        <div id="bank-info" class="hidden card p-8 mt-6 w-full section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Bank Information</h2>
+            <div id="bank-info-content" class="text-gray-700"></div>
+            <button id="bank-info-back" onclick="backToMenu()" class="btn bg-gray-600 text-white p-3 rounded-lg w-full mt-4 font-semibold hover:bg-gray-700">Back</button>
+        </div>
+
+        <!-- About Section -->
+        <div id="about" class="hidden card p-8 mt-6 w-full max-w-md section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">About Al-Zaytoonah Bank</h2>
+            <p class="text-gray-700">Developed by: Abdulrahman Farhan</p>
+            <p class="text-gray-700">Supervisor: Dr. Jalal Kiswani</p>
+            <p class="text-gray-700">Al-Zaytoonah University of Jordan</p>
+            <p class="text-gray-700">Description: A simple banking system built with JavaScript for educational purposes.</p>
+            <p class="text-gray-700">© 2025 Abdulrahman Farhan. All rights reserved.</p>
+            <button onclick="backToMenu()" class="btn bg-gray-600 text-white p-3 rounded-lg w-full mt-4 font-semibold hover:bg-gray-700">Back</button>
+        </div>
+    </main>
+
+    <script>
+        // Bank System Logic
+        class Bank {
+            constructor() {
+                this.bankName = "Al-Zaytoonah Bank";
+                this.customers = [];
+            }
+            getCustomers() { return this.customers; }
+            toString() { return `Bank: ${this.bankName}, Customers: ${this.customers.length}`; }
+            toJSON() {
+                return {
+                    bankName: this.bankName,
+                    customers: this.customers.map(customer => ({
+                        id: customer.id,
+                        name: customer.name,
+                        email: customer.email,
+                        phoneNumber: customer.phoneNumber,
+                        accounts: customer.accounts.map(account => ({
+                            id: account.id,
+                            balance: account.balance,
+                            ownerId: account.owner.id,
+                            creationDate: account.creationDate,
+                            transactions: account.transactions.map(t => ({
+                                type: t.type,
+                                amount: t.amount,
+                                time: t.time
+                            })),
+                            type: account.constructor.name,
+                            overDraftLimit: account.overDraftLimit || null,
+                            annualInterestRate: account.annualInterestRate || null,
+                            maturityPeriod: account.maturityPeriod || null,
+                            profitShareRate: account.profitShareRate || null,
+                            interestRate: account.interestRate || null,
+                            termInMonths: account.termInMonths || null,
+                            withdrawLimit: account.withdrawLimit || null
+                        }))
+                    }))
+                };
+            }
+        }
+
+        class Customer {
+            static nextId = 1001;
+            constructor(name) {
+                this.id = Customer.nextId++;
+                this.name = name;
+                this.email = "";
+                this.phoneNumber = "";
+                this.accounts = [];
+            }
+            setEmail(email) { this.email = email; }
+            setPhoneNumber(phone) { this.phoneNumber = phone; }
+            getAccounts() { return this.accounts; }
+            toString() { return `Customer: ID=${this.id}, Name=${this.name}, Email=${this.email}, Phone=${this.phoneNumber}`; }
+        }
+
+        class Transaction {
+            constructor(type, amount) {
+                this.type = type;
+                this.amount = amount;
+                this.time = new Date().toISOString().split('T')[0];
+            }
+            toString() { return `Transaction: Type=${this.type}, Amount=${this.amount}, Time=${this.time}`; }
+        }
+
+        class Account {
+            static nextId = 1;
+            constructor(balance, owner) {
+                this.id = Account.nextId++;
+                this.balance = balance;
+                this.owner = owner;
+                this.creationDate = new Date().toISOString().split('T')[0];
+                this.transactions = [];
+            }
+            deposit(amount) {
+                if (amount > 0) {
+                    this.balance += amount;
+                    this.transactions.push(new Transaction("DEPOSIT", amount));
+                    saveBankData();
+                    return true;
+                }
+                return false;
+            }
+            withdraw(amount) {
+                if (amount > 0 && this.balance >= amount) {
+                    this.balance -= amount;
+                    this.transactions.push(new Transaction("WITHDRAWAL", amount));
+                    saveBankData();
+                    return true;
+                }
+                return false;
+            }
+            getBalance() { return this.balance; }
+            getTransactions() { return this.transactions; }
+            toString() { return `Account: ID=${this.id}, Balance=${this.balance}, Owner=${this.owner.name}`; }
+        }
+
+        class CheckingAccount extends Account {
+            constructor(balance, owner, overDraftLimit) {
+                super(balance, owner);
+                this.overDraftLimit = overDraftLimit;
+            }
+            withdraw(amount) {
+                if (amount > 0 && this.balance + this.overDraftLimit >= amount) {
+                    this.balance -= amount;
+                    this.transactions.push(new Transaction("WITHDRAWAL", amount));
+                    saveBankData();
+                    return true;
+                }
+                return false;
+            }
+            toString() { return `CheckingAccount: ID=${this.id}, Balance=${this.balance}, OverDraftLimit=${this.overDraftLimit}`; }
+        }
+
+        class FixedDepositAccount extends Account {
+            constructor(balance, owner, maturityPeriod) {
+                super(balance, owner);
+                this.annualInterestRate = 0;
+                this.maturityPeriod = maturityPeriod;
+            }
+            withdraw() { return false; }
+            setAnnualInterestRate(rate) { if (rate >= 0) this.annualInterestRate = rate; saveBankData(); }
+            toString() { return `FixedDepositAccount: ID=${this.id}, Balance=${this.balance}, InterestRate=${this.annualInterestRate}, MaturityPeriod=${this.maturityPeriod}`; }
+        }
+
+        class IslamicAccount extends Account {
+            constructor(balance, owner, profitShareRate) {
+                super(balance, owner);
+                this.profitShareRate = profitShareRate;
+            }
+            calculateProfit() { return this.balance * this.profitShareRate; }
+            toString() { return `IslamicAccount: ID=${this.id}, Balance=${this.balance}, ProfitShareRate=${this.profitShareRate}`; }
+        }
+
+        class Loan extends Account {
+            constructor(balance, owner, interestRate, termInMonths) {
+                super(balance, owner);
+                this.interestRate = interestRate;
+                this.termInMonths = termInMonths;
+            }
+            calculateMonthlyPayment() { return (this.balance * this.interestRate) / this.termInMonths; }
+            toString() { return `Loan: ID=${this.id}, Balance=${this.balance}, InterestRate=${this.interestRate}, TermInMonths=${this.termInMonths}`; }
+        }
+
+        class SavingAccount extends Account {
+            constructor(balance, owner, withdrawLimit) {
+                super(balance, owner);
+                this.annualInterestRate = 0;
+                this.withdrawLimit = withdrawLimit;
+            }
+            withdraw(amount) {
+                if (amount > 0 && amount <= this.withdrawLimit && this.balance >= amount) {
+                    this.balance -= amount;
+                    this.transactions.push(new Transaction("WITHDRAWAL", amount));
+                    saveBankData();
+                    return true;
+                }
+                return false;
+            }
+            setAnnualInterestRate(rate) { if (rate >= 0) this.annualInterestRate = rate; saveBankData(); }
+            calculateInterest() { return this.balance * this.annualInterestRate; }
+            toString() { return `SavingAccount: ID=${this.id}, Balance=${this.balance}, InterestRate=${this.annualInterestRate}, WithdrawLimit=${this.withdrawLimit}`; }
+        }
+
+        class CurrencyConverter {
+            static convertUSDToJOD(usd) { return usd * 0.709; }
+            static convertJODToUSD(jod) { return jod / 0.709; }
+        }
+
+        let bank;
+        function loadBankData() {
+            console.log('Loading bank data...');
+            const bankData = JSON.parse(localStorage.getItem('bankData'));
+            if (bankData) {
+                bank = new Bank();
+                bank.bankName = bankData.bankName;
+                bank.customers = bankData.customers.map(c => {
+                    const customer = new Customer(c.name);
+                    customer.id = c.id;
+                    customer.email = c.email || "";
+                    customer.phoneNumber = c.phoneNumber || "";
+                    customer.accounts = c.accounts.map(a => {
+                        let account;
+                        switch (a.type) {
+                            case 'SavingAccount':
+                                account = new SavingAccount(a.balance, customer, a.withdrawLimit);
+                                account.annualInterestRate = a.annualInterestRate || 0;
+                                break;
+                            case 'CheckingAccount':
+                                account = new CheckingAccount(a.balance, customer, a.overDraftLimit);
+                                break;
+                            case 'FixedDepositAccount':
+                                account = new FixedDepositAccount(a.balance, customer, a.maturityPeriod);
+                                account.annualInterestRate = a.annualInterestRate || 0;
+                                break;
+                            case 'IslamicAccount':
+                                account = new IslamicAccount(a.balance, customer, a.profitShareRate);
+                                break;
+                            case 'Loan':
+                                account = new Loan(a.balance, customer, a.interestRate, a.termInMonths);
+                                break;
+                            default:
+                                console.error(`Unknown account type: ${a.type}`);
+                                return null;
+                        }
+                        if (account) {
+                            account.id = a.id;
+                            account.creationDate = a.creationDate;
+                            account.transactions = a.transactions.map(t => {
+                                const transaction = new Transaction(t.type, t.amount);
+                                transaction.time = t.time;
+                                return transaction;
+                            });
+                        }
+                        return account;
+                    }).filter(a => a !== null);
+                    return customer;
+                });
+                Customer.nextId = Math.max(...bank.customers.map(c => c.id), 1000) + 1;
+                Account.nextId = Math.max(...bank.customers.flatMap(c => c.accounts.map(a => a.id)), 0) + 1;
+                console.log('Bank data loaded:', bank);
+            } else {
+                bank = new Bank();
+                console.log('No bank data found, initialized new bank:', bank);
+            }
+        }
+
+        function saveBankData() {
+            console.log('Saving bank data:', bank);
+            localStorage.setItem('bankData', JSON.stringify(bank));
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('main > div').forEach(div => {
+                div.classList.add('hidden');
+                div.classList.remove('active');
+            });
+            const section = document.getElementById(sectionId);
+            section.classList.remove('hidden');
+            setTimeout(() => section.classList.add('active'), 10);
+            if (sectionId === 'create-account' || sectionId === 'manage-accounts') {
+                loadCustomers();
+            }
+            if (sectionId === 'manage-accounts') {
+                resetManageAccounts();
+            }
+        }
+
+        function backToMenu() {
+            showSection('main-menu');
+        }
+
+        function backToManageAccounts() {
+            document.getElementById('deposit-withdraw').classList.add('hidden');
+            document.getElementById('transactions').classList.add('hidden');
+            document.getElementById('calculate').classList.add('hidden');
+            document.getElementById('manage-accounts').classList.remove('hidden');
+            document.getElementById('manage-accounts').classList.add('active');
+            resetManageAccounts();
+        }
+
+        function resetManageAccounts() {
+            const customerSelect = document.getElementById('manage-customer-select');
+            const accountSelect = document.getElementById('account-select');
+            const accountActions = document.getElementById('account-actions');
+            const customerStatus = document.getElementById('customer-status');
+            const accountStatus = document.getElementById('account-status');
+            customerSelect.value = '';
+            accountSelect.innerHTML = '<option value="">Select Account</option>';
+            accountActions.classList.add('hidden');
+            customerStatus.classList.remove('hidden');
+            customerStatus.textContent = bank.getCustomers().length === 0 ? 'No customers registered.' : 'Please select a customer.';
+            accountStatus.classList.add('hidden');
+        }
+
+        function loadCustomers() {
+            console.log('Loading customers...');
+            const customerSelects = [document.getElementById('customer-select'), document.getElementById('manage-customer-select')];
+            customerSelects.forEach(select => {
+                if (select) {
+                    select.innerHTML = '<option value="">Select Customer</option>';
+                    bank.getCustomers().forEach(customer => {
+                        const option = document.createElement('option');
+                        option.value = customer.id;
+                        option.textContent = `${customer.name} (ID: ${customer.id})`;
+                        select.appendChild(option);
+                    });
+                }
+            });
+            console.log('Customers loaded:', bank.getCustomers());
+        }
+
+        function registerCustomer() {
+            const name = document.getElementById('customer-name').value.trim();
+            const email = document.getElementById('customer-email').value.trim();
+            const phone = document.getElementById('customer-phone').value.trim();
+            const error = document.getElementById('register-error');
+            if (!name) {
+                error.textContent = 'Error: Name cannot be empty!';
+                error.classList.remove('hidden');
+                return;
+            }
+            const customer = new Customer(name);
+            if (email) customer.setEmail(email);
+            if (phone) customer.setPhoneNumber(phone);
+            bank.getCustomers().push(customer);
+            saveBankData();
+            error.classList.add('hidden');
+            alert(`Success: Customer ${name} registered with ID ${customer.id}`);
+            document.getElementById('customer-name').value = '';
+            document.getElementById('customer-email').value = '';
+            document.getElementById('customer-phone').value = '';
+            backToMenu();
+        }
+
+        function createAccount() {
+            const customerId = parseInt(document.getElementById('customer-select').value);
+            const accountType = document.getElementById('account-type').value;
+            const balance = parseFloat(document.getElementById('initial-balance').value);
+            const specific = parseFloat(document.getElementById('account-specific').value);
+            const interestRate = parseFloat(document.getElementById('interest-rate').value);
+            const termMonths = parseInt(document.getElementById('term-months').value);
+            const error = document.getElementById('create-account-error');
+            if (!customerId || !accountType || isNaN(balance) || balance < 0) {
+                error.textContent = 'Error: Please fill all required fields with valid values.';
+                error.classList.remove('hidden');
+                return;
+            }
+            const customer = bank.getCustomers().find(c => c.id === customerId);
+            let account;
+            switch (accountType) {
+                case 'Saving':
+                    if (isNaN(specific) || specific <= 0) {
+                        error.textContent = 'Error: Withdraw limit must be a positive number.';
+                        error.classList.remove('hidden');
+                        return;
+                    }
+                    account = new SavingAccount(balance, customer, specific);
+                    if (!isNaN(interestRate)) account.setAnnualInterestRate(interestRate);
+                    break;
+                case 'Checking':
+                    account = new CheckingAccount(balance, customer, specific || 0);
+                    break;
+                case 'FixedDeposit':
+                    if (isNaN(termMonths) || termMonths <= 0) {
+                        error.textContent = 'Error: Term in months must be a positive number.';
+                        error.classList.remove('hidden');
+                        return;
+                    }
+                    account = new FixedDepositAccount(balance, customer, termMonths);
+                    if (!isNaN(interestRate)) account.setAnnualInterestRate(interestRate);
+                    break;
+                case 'Islamic':
+                    if (isNaN(interestRate) || interestRate <= 0) {
+                        error.textContent = 'Error: Profit share rate must be a positive number.';
+                        error.classList.remove('hidden');
+                        return;
+                    }
+                    account = new IslamicAccount(balance, customer, interestRate);
+                    break;
+                case 'Loan':
+                    if (isNaN(interestRate) || interestRate <= 0 || isNaN(termMonths) || termMonths <= 0) {
+                        error.textContent = 'Error: Interest rate and term in months must be positive numbers.';
+                        error.classList.remove('hidden');
+                        return;
+                    }
+                    account = new Loan(balance, customer, interestRate, termMonths);
+                    break;
+            }
+            customer.getAccounts().push(account);
+            saveBankData();
+            error.classList.add('hidden');
+            alert(`Success: Account created with ID ${account.id}`);
+            document.getElementById('customer-select').value = '';
+            document.getElementById('account-type').value = '';
+            document.getElementById('initial-balance').value = '';
+            document.getElementById('account-specific').value = '';
+            document.getElementById('interest-rate').value = '';
+            document.getElementById('term-months').value = '';
+            backToMenu();
+        }
+
+        function loadAccounts() {
+            console.log('Loading accounts...');
+            const customerId = parseInt(document.getElementById('manage-customer-select').value);
+            const accountSelect = document.getElementById('account-select');
+            const accountActions = document.getElementById('account-actions');
+            const customerStatus = document.getElementById('customer-status');
+            const accountStatus = document.getElementById('account-status');
+            accountSelect.innerHTML = '<option value="">Select Account</option>';
+            accountActions.classList.add('hidden');
+            accountStatus.classList.add('hidden');
+            if (customerId) {
+                const customer = bank.getCustomers().find(c => c.id === customerId);
+                if (customer.getAccounts().length === 0) {
+                    accountStatus.textContent = 'No accounts found for this customer.';
+                    accountStatus.classList.remove('hidden');
+                } else {
+                    customer.getAccounts().forEach(account => {
+                        const option = document.createElement('option');
+                        option.value = account.id;
+                        option.textContent = account.toString();
+                        accountSelect.appendChild(option);
+                    });
+                    accountStatus.classList.add('hidden');
+                }
+                customerStatus.classList.add('hidden');
+            } else {
+                customerStatus.textContent = 'Please select a customer.';
+                customerStatus.classList.remove('hidden');
+            }
+            console.log('Accounts loaded for customer ID:', customerId);
+        }
+
+        function showDeposit() {
+            document.getElementById('manage-accounts').classList.add('hidden');
+            document.getElementById('deposit-withdraw').classList.remove('hidden');
+            document.getElementById('deposit-withdraw').classList.add('active');
+            document.getElementById('action-title').textContent = 'Deposit';
+            document.getElementById('action-error').classList.add('hidden');
+            document.getElementById('action-submit').onclick = performDeposit;
+        }
+
+        function showWithdraw() {
+            document.getElementById('manage-accounts').classList.add('hidden');
+            document.getElementById('deposit-withdraw').classList.remove('hidden');
+            document.getElementById('deposit-withdraw').classList.add('active');
+            document.getElementById('action-title').textContent = 'Withdraw';
+            document.getElementById('action-error').classList.add('hidden');
+            document.getElementById('action-submit').onclick = performWithdraw;
+        }
+
+        function performDeposit() {
+            const amount = parseFloat(document.getElementById('action-amount').value);
+            const accountId = parseInt(document.getElementById('account-select').value);
+            const customerId = parseInt(document.getElementById('manage-customer-select').value);
+            const error = document.getElementById('action-error');
+            if (isNaN(amount) || amount <= 0) {
+                error.textContent = 'Error: Please enter a valid positive amount.';
+                error.classList.remove('hidden');
+                return;
+            }
+            const customer = bank.getCustomers().find(c => c.id === customerId);
+            const account = customer.getAccounts().find(a => a.id === accountId);
+            if (account.deposit(amount)) {
+                error.classList.add('hidden');
+                alert(`Success: Deposited ${amount}, New Balance: ${account.getBalance()}`);
+            } else {
+                error.textContent = 'Error: Invalid deposit amount!';
+                error.classList.remove('hidden');
+                return;
+            }
+            document.getElementById('action-amount').value = '';
+            backToManageAccounts();
+        }
+
+        function performWithdraw() {
+            const amount = parseFloat(document.getElementById('action-amount').value);
+            const accountId = parseInt(document.getElementById('account-select').value);
+            const customerId = parseInt(document.getElementById('manage-customer-select').value);
+            const error = document.getElementById('action-error');
+            if (isNaN(amount) || amount <= 0) {
+                error.textContent = 'Error: Please enter a valid positive amount.';
+                error.classList.remove('hidden');
+                return;
+            }
+            const customer = bank.getCustomers().find(c => c.id === customerId);
+            const account = customer.getAccounts().find(a => a.id === accountId);
+            if (account.withdraw(amount)) {
+                error.classList.add('hidden');
+                alert(`Success: Withdrew ${amount}, New Balance: ${account.getBalance()}`);
+            } else {
+                error.textContent = 'Error: Withdrawal failed (insufficient funds or restricted account)!';
+                error.classList.remove('hidden');
+                return;
+            }
+            document.getElementById('action-amount').value = '';
+            backToManageAccounts();
+        }
+
+        function showTransactions() {
+            document.getElementById('manage-accounts').classList.add('hidden');
+            document.getElementById('transactions').classList.remove('hidden');
+            document.getElementById('transactions').classList.add('active');
+            const accountId = parseInt(document.getElementById('account-select').value);
+            const customerId = parseInt(document.getElementById('manage-customer-select').value);
+            const customer = bank.getCustomers().find(c => c.id === customerId);
+            const account = customer.getAccounts().find(a => a.id === accountId);
+            const transactionList = document.getElementById('transaction-list');
+            transactionList.innerHTML = '';
+            if (account.getTransactions().length === 0) {
+                transactionList.innerHTML = '<p class="text-gray-600">No transactions found.</p>';
+            } else {
+                account.getTransactions().forEach(t => {
+                    const p = document.createElement('p');
+                    p.textContent = t.toString();
+                    p.className = 'text-gray-700';
+                    transactionList.appendChild(p);
+                });
+            }
+        }
+
+        function showCalculate() {
+            document.getElementById('manage-accounts').classList.add('hidden');
+            document.getElementById('calculate').classList.remove('hidden');
+            document.getElementById('calculate').classList.add('active');
+            const accountId = parseInt(document.getElementById('account-select').value);
+            const customerId = parseInt(document.getElementById('manage-customer-select').value);
+            const customer = bank.getCustomers().find(c => c.id === customerId);
+            const account = customer.getAccounts().find(a => a.id === accountId);
+            const result = document.getElementById('calculate-result');
+            if (account instanceof SavingAccount) {
+                result.textContent = `Interest: ${account.calculateInterest().toFixed(2)}`;
+            } else if (account instanceof IslamicAccount) {
+                result.textContent = `Profit: ${account.calculateProfit().toFixed(2)}`;
+            } else if (account instanceof Loan) {
+                result.textContent = `Monthly Payment: ${account.calculateMonthlyPayment().toFixed(2)}`;
+            } else if (account instanceof FixedDepositAccount) {
+                result.textContent = `Interest: ${(account.balance * account.annualInterestRate).toFixed(2)}`;
+            } else {
+                result.textContent = 'No interest/profit calculation available for this account.';
+            }
+        }
+
+        function convertCurrency() {
+            const type = document.getElementById('conversion-type').value;
+            const amount = parseFloat(document.getElementById('conversion-amount').value);
+            const result = document.getElementById('conversion-result');
+            if (isNaN(amount) || amount < 0) {
+                result.textContent = 'Error: Please enter a valid positive amount.';
+                result.className = 'text-lg text-red-600 mt-4';
+                return;
+            }
+            if (type === 'usd-to-jod') {
+                const jod = CurrencyConverter.convertUSDToJOD(amount);
+                result.textContent = `${amount} USD = ${jod.toFixed(2)} JOD`;
+            } else {
+                const usd = CurrencyConverter.convertJODToUSD(amount);
+                result.textContent = `${amount} JOD = ${usd.toFixed(2)} USD`;
+            }
+            result.className = 'text-lg text-gray-700 mt-4';
+            document.getElementById('conversion-amount').value = '';
+        }
+
+        function displayBankInfo() {
+            showSection('bank-info');
+            const content = document.getElementById('bank-info-content');
+            content.innerHTML = `<p class="text-gray-700">${bank.toString()}</p>`;
+            if (bank.getCustomers().length === 0) {
+                content.innerHTML += '<p class="text-gray-600">No customers registered.</p>';
+            } else {
+                content.innerHTML += '<h3 class="text-xl font-bold mt-4 text-gray-800">Customers:</h3>';
+                bank.getCustomers().forEach(customer => {
+                    content.innerHTML += `<p class="mt-2 text-gray-700">${customer.toString()}</p>`;
+                    if (customer.getAccounts().length > 0) {
+                        content.innerHTML += '<p class="ml-4 text-gray-600">Accounts:</p>';
+                        customer.getAccounts().forEach(account => {
+                            content.innerHTML += `<p class="ml-8 text-gray-700">${account.toString()}</p>`;
+                        });
+                    }
+                });
+            }
+        }
+
+        // Handle account type change to show/hide specific fields
+        document.getElementById('account-type').addEventListener('change', function() {
+            const type = this.value;
+            const specificLabel = document.getElementById('account-specific');
+            const interestRate = document.getElementById('interest-rate');
+            const termMonths = document.getElementById('term-months');
+            specificLabel.classList.remove('hidden');
+            interestRate.classList.add('hidden');
+            termMonths.classList.add('hidden');
+            if (type === 'Saving') {
+                specificLabel.placeholder = 'Withdraw Limit';
+                interestRate.classList.remove('hidden');
+            } else if (type === 'Checking') {
+                specificLabel.placeholder = 'Overdraft Limit';
+            } else if (type === 'FixedDeposit') {
+                specificLabel.classList.add('hidden');
+                interestRate.classList.remove('hidden');
+                termMonths.classList.remove('hidden');
+            } else if (type === 'Islamic') {
+                specificLabel.classList.add('hidden');
+                interestRate.classList.remove('hidden');
+                interestRate.placeholder = 'Profit Share Rate (e.g., 0.04)';
+            } else if (type === 'Loan') {
+                specificLabel.classList.add('hidden');
+                interestRate.classList.remove('hidden');
+                termMonths.classList.remove('hidden');
+                interestRate.placeholder = 'Interest Rate (e.g., 0.06)';
+            } else {
+                specificLabel.classList.add('hidden');
+            }
+        });
+
+        // Initialize event listeners
+        function initializeEventListeners() {
+            const customerSelect = document.getElementById('manage-customer-select');
+            const accountSelect = document.getElementById('account-select');
+            customerSelect.addEventListener('change', loadAccounts);
+            accountSelect.addEventListener('change', () => {
+                const accountActions = document.getElementById('account-actions');
+                const accountStatus = document.getElementById('account-status');
+                if (accountSelect.value) {
+                    accountActions.classList.remove('hidden');
+                    accountStatus.classList.add('hidden');
+                } else {
+                    accountActions.classList.add('hidden');
+                    accountStatus.textContent = 'Please select an account.';
+                    accountStatus.classList.remove('hidden');
+                }
+            });
+        }
+
+        // Initialize
+        loadBankData();
+        initializeEventListeners();
+    </script>
+</body>
+</html>
