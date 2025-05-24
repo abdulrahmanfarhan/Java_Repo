@@ -21,44 +21,38 @@
         }
 
         header {
+            background-color: #1a2a44;
+            color: #fff;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: #1a2a44;
-            color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo-container h1 {
-            font-size: 28px;
-            font-weight: 900;
+            font-size: 1.75rem;
+            font-weight: 700;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
+            gap: 1.5rem;
         }
 
         nav ul li a {
-            text-decoration: none;
             color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         nav ul li a:hover,
         nav ul li a.active {
             color: #00aaff;
-            transform: scale(1.1);
         }
 
         .hero {
@@ -104,7 +98,6 @@
             font-size: 48px;
             font-weight: 900;
             margin-bottom: 20px;
-            animation: fadeIn 1s ease-in-out;
         }
 
         .hero-content p {
@@ -112,29 +105,19 @@
             margin-bottom: 20px;
         }
 
-        .hero-content a {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #00aaff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
         .hero-content a:hover {
             background-color: #0088cc;
-            transform: translateY(-3px);
         }
 
         .about-section {
+            
             padding: 60px 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .about-section h2 {
+            
             font-size: 36px;
             font-weight: 900;
             text-align: center;
@@ -142,6 +125,13 @@
             color: #1a2a44;
         }
 
+        .team-grid{
+            background-image: url(img/ggggg.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+        }
         .about-content {
             display: flex;
             flex-wrap: wrap;
@@ -169,114 +159,47 @@
             object-position: center;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .about-image img:hover {
-            transform: scale(1.05);
-        }
-
-        .team-section {
-            padding: 60px 40px;
-            background-color: #fff;
-        }
-
-        .team-section h2 {
-            font-size: 36px;
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #1a2a44;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .team-card {
-            background: #f9f9f9;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: slideUp 0.8s ease-in-out;
-        }
-
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0, 170, 255, 0.2);
-        }
-
-        .team-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .team-card-content {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .team-card-content h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: #1a2a44;
-        }
-
-        .team-card-content p {
-            font-size: 14px;
-            color: #666;
         }
 
         .values-section {
-            padding: 60px 40px;
+            padding: 80px 60px;
             background-color: #f4f7fa;
         }
 
         .values-section h2 {
-            font-size: 36px;
+            font-size: 48px;
             font-weight: 900;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             color: #1a2a44;
         }
 
         .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
 
         .value-card {
             background: #fff;
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 35px 30px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: slideUp 0.8s ease-in-out;
-        }
-
-        .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0, 170, 255, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         .value-card h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 20px;
             color: #1a2a44;
         }
 
         .value-card p {
-            font-size: 16px;
-            color: #666;
+            font-size: 18px;
+            line-height: 1.9;
+            color: #444;
+            text-align: justify;
         }
 
         .call-to-action {
@@ -305,12 +228,10 @@
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .call-to-action a:hover {
             background-color: #0088cc;
-            transform: scale(1.05);
         }
 
         footer {
@@ -334,7 +255,6 @@
             text-decoration: none;
             color: #fff;
             font-size: 14px;
-            transition: color 0.3s ease;
         }
 
         .footer-links ul li a:hover {
@@ -376,14 +296,62 @@
             color: rgb(0, 0, 0);
             padding: 10px;
         }
+
+        .team-grid {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+            border-radius: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-items: center;
+            align-items: start;
+            height: 400px;
+        }
+
+        .member-info {
+            width: 300px;
+            max-width: 400px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-info img {
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #e9ecef;
+        }
+
+        .member-info h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .member-info p {
+            margin: 0;
+            font-size: 15px;
+            color: #6c757d;
+            line-height: 1.5;
+        }
     </style>
 </head>
 
 <body>
     <header>
-       <div class="logo-container">
+        <div class="logo-container">
             <a href="Home.html" style="text-decoration: none; color: white;">
-                <h1>FinanceHub</h1>
+                <h1>Farhan_Finance</h1>
             </a>
         </div>
         <nav>
@@ -391,7 +359,6 @@
                 <li><a href="Home.html">Home</a></li>
                 <li><a href="Markets.html">Markets</a></li>
                 <li><a href="News.html">News</a></li>
-                <li><a href="Banking.html">Banking</a></li>
                 <li><a href="pay.html">payment</a></li>
                 <li><a href="login.html" class="logout">Log Out</a></li>
             </ul>
@@ -400,11 +367,10 @@
 
     <main>
         <section class="hero">
-            <img src="about-hero.jpg" alt="About Us Hero Image">
+            <img src="img/about_us.jpg" alt="About Us Hero Image">
             <div class="hero-content">
-                <h2>About FinanceHub</h2>
+                <h2>About Farhan Finance</h2>
                 <p>Empowering your financial future with innovative solutions and trusted expertise.</p>
-                <a href="#">Discover Our Story</a>
             </div>
         </section>
 
@@ -412,67 +378,72 @@
             <h2>Our Mission</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>At FinanceHub, we are dedicated to simplifying finance for everyone. Our mission is to provide
+                    <p>At Farhan Finance, we are dedicated to simplifying finance for everyone. Our mission is to
+                        provide
                         accessible, secure, and innovative financial solutions that empower individuals and businesses
                         to achieve their goals.</p>
-                    <p>Founded in 2020, we combine cutting-edge technology with deep industry expertise to deliver
+                    <p>Founded in 2025, we combine cutting-edge technology with deep industry expertise to deliver
                         unparalleled banking, trading, and investment services.</p>
                 </div>
                 <div class="about-image">
-                    <img src="mission-image.jpg" alt="Mission Image">
+                    <img src="img/mession (2).png" alt="Mission Image">
                 </div>
             </div>
         </section>
 
         <section class="team-section">
-            <h2>Meet Our Team</h2>
             <div class="team-grid">
-                <div class="team-card">
-                    <img src="team-member1.jpg" alt="Team Member 1 Image">
-                    <div class="team-card-content">
-                        <h3>John Doe</h3>
-                        <p>CEO & Founder</p>
+                <span class="m">
+                    <div class="member-info">
+                        <img src="img/Screenshot 2025-04-17 150028.png" alt="صورة جون دو">
+                        <h3>Abdulrahman Farhan</h3>
+                        <p>Software engineer</p>
                     </div>
-                </div>
-                <div class="team-card">
-                    <img src="team-member2.jpg" alt="Team Member 2 Image">
-                    <div class="team-card-content">
-                        <h3>Jane Smith</h3>
-                        <p>Chief Financial Officer</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="team-member3.jpg" alt="Team Member 3 Image">
-                    <div class="team-card-content">
-                        <h3>Michael Brown</h3>
-                        <p>Head of Technology</p>
-                    </div>
-                </div>
+                </span>
             </div>
         </section>
 
+
         <section class="values-section">
-            <h2>Our Values</h2>
+            <h2>Our Core Financial Values</h2>
             <div class="values-grid">
                 <div class="value-card">
                     <h3>Integrity</h3>
-                    <p>We uphold the highest standards of transparency and trust in all our services.</p>
+                    <p>Integrity is the cornerstone of our financial philosophy. We are committed to fostering long-term
+                        relationships built on trust, transparency, and ethical behavior. In every transaction and
+                        investment decision, we act with complete honesty and openness. We ensure that clients are
+                        always informed, empowered, and in control of their financial choices. This principle guides our
+                        compliance with regulations, the way we manage sensitive data, and how we communicate risks and
+                        opportunities alike. Without integrity, no financial relationship can thrive—so we treat it not
+                        as a value, but as a daily practice.</p>
                 </div>
                 <div class="value-card">
                     <h3>Innovation</h3>
-                    <p>We embrace technology to deliver cutting-edge financial solutions.</p>
+                    <p>In today's fast-paced financial world, innovation is not optional—it's essential. We constantly
+                        seek out emerging technologies and investment methodologies to enhance the performance and
+                        security of our services. From algorithm-driven portfolio management to blockchain-based
+                        recordkeeping, our approach is rooted in forward-thinking solutions. Innovation allows us to
+                        offer more accurate financial forecasting, faster transactions, and smarter investment tools. By
+                        staying ahead of market trends and digital transformations, we help our clients stay competitive
+                        and well-prepared for the financial challenges of tomorrow.</p>
                 </div>
                 <div class="value-card">
                     <h3>Customer Focus</h3>
-                    <p>Your financial success is at the heart of everything we do.</p>
+                    <p>Every financial journey is unique, and our commitment to customer focus means we never treat
+                        clients as just numbers. We take the time to deeply understand your financial objectives, risk
+                        tolerance, and long-term aspirations. Whether you're saving for retirement, planning to grow
+                        your investment portfolio, or managing a complex financial transition, we tailor our services to
+                        your exact needs. Our advisors provide ongoing support, clear communication, and strategic
+                        guidance, helping you feel confident and in control every step of the way. Your success is our
+                        success, and we invest in it fully.</p>
                 </div>
             </div>
         </section>
 
         <section class="call-to-action">
-            <h2>Join Our Journey</h2>
-            <p>Partner with FinanceHub to unlock your financial potential.</p>
-            <a href="#">Get Started</a>
+            <h2>This is HTML course project</h2>
+            <p>Dr. Odai Al-Dalahmeh, Faculty Member at Al-Zaytoonah University of Jordan</p>
+            <a href="Home.html">Go To Home</a>
         </section>
     </main>
 
@@ -496,7 +467,8 @@
             </p>
         </div>
         <div class="contact-info">
-            <p>Email: abdulrahmanfarhan1985@gmail.com</p>
+            <p>Email: <a target="_blank" style="text-decoration: none;"
+                    href="mailto:abdulrahmanfarhan1985@gmail.com">abdulrahmanfarhan1985@gmail.com</a></p>
             <p>Phone: +962780546803</p>
         </div>
     </footer>

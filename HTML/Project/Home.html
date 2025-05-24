@@ -14,193 +14,191 @@
         }
 
         body {
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
+            background-color: #1a2a44;
+            color: #fff;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: #1a2a44;
-            color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo-container h1 {
-            font-size: 28px;
-            font-weight: 900;
+            font-size: 1.75rem;
+            font-weight: 700;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
+            gap: 1.5rem;
         }
 
         nav ul li a {
-            text-decoration: none;
             color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         nav ul li a:hover,
         nav ul li a.active {
             color: #00aaff;
-            transform: scale(1.1);
         }
 
         .hero {
-            height: 500px;
-            background-color: #f4f7fa;
+            background-image: url(img/back.png);
+            background-size: cover;
+            background-position: center;
+            height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            color: #fff;
+            padding: 1rem;
         }
 
         .hero h2 {
-            font-size: 40px;
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin-bottom: 1rem;
         }
 
         .features {
-            padding: 40px 20px;
-            background-color: #fff;
+            padding: 3rem 1rem;
+            background-color: #f8fafc;
+            text-align: center;
         }
 
         .features h2 {
-            font-size: 28px;
-            text-align: center;
-            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .feature-card {
-            width: 30%;
-            padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #fff;
+            padding: 2rem;
             border-radius: 8px;
-            text-align: center;
-            display: inline-block;
-            margin: 0 1.5%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2b6cb0;
+            margin-bottom: 1rem;
         }
 
         .feature-card p {
-            font-size: 16px;
-            color: #666;
+            font-size: 1rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
         }
 
-        .latest-news {
-            padding: 40px 20px;
-            background-color: #f4f7fa;
+        .feature-card ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
         }
 
-        .latest-news h2 {
-            font-size: 28px;
+        .feature-card ul li {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            list-style-type: disc;
+        }
+
+        .news {
+            padding: 2rem 1rem;
+            background-color: #1870c7;
             text-align: center;
-            margin-bottom: 20px;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            height: 150px;
         }
 
-        .news-item {
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
+        .news h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
         }
 
-        .news-item h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .news-item p {
-            font-size: 16px;
-            color: #666;
-        }
-
-        .call-to-action {
-            padding: 40px 20px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .call-to-action h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .call-to-action p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
+        .news .newsDiv {
+            padding: 1rem;
+            height: 150px;
         }
 
         footer {
-            padding: 20px;
             background-color: #1a2a44;
             color: #fff;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .footer-links ul {
             list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
         .footer-links ul li a {
-            text-decoration: none;
             color: #fff;
-            font-size: 14px;
+            text-decoration: none;
+            font-size: 0.9rem;
         }
 
         .footer-links ul li a:hover {
             color: #00aaff;
         }
 
-        .social-media p {
-            font-size: 14px;
+        .social-media p,
+        .contact-info p {
+            font-size: 0.9rem;
         }
 
-        .contact-info p {
-            font-size: 14px;
-        }
-        .logout{
+        .logout {
             background-color: #ff0000;
-            color: white;
-            padding: 10px;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1rem;
         }
-        .logout:hover{
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            padding: 10px;
+
+        .logout:hover {
+            background-color: #e60000;
         }
     </style>
 </head>
@@ -209,7 +207,7 @@
     <header>
         <div class="logo-container">
             <a href="Home.html" style="text-decoration: none; color: white;">
-                <h1>FinanceHub</h1>
+                <h1>Farhan_Finance</h1>
             </a>
         </div>
         <nav>
@@ -217,13 +215,11 @@
                 <li><a href="Home.html" class="active">Home</a></li>
                 <li><a href="Markets.html">Markets</a></li>
                 <li><a href="News.html">News</a></li>
-                <li><a href="Banking.html">Banking</a></li>
                 <li><a href="pay.html">payment</a></li>
                 <li><a href="login.html" class="logout">Log Out</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
         <section class="hero">
             <h2>Master Your Financial Journey</h2>
@@ -231,37 +227,76 @@
         </section>
 
         <section class="features">
-            <h2>Why Choose FinanceHub?</h2>
-            <div class="feature-card">
-                <h3>Market Insights</h3>
-                <p>Access live data on stocks, crypto, and forex to make informed decisions.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Trading Tools</h3>
-                <p>Simplify your trading with advanced analytics and portfolio management.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Financial News</h3>
-                <p>Stay updated with breaking news and expert analysis.</p>
-            </div>
-        </section>
+            <h2>Why FinanceHub is Your Ultimate Financial Partner</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Market Insights</h3>
+                    <p>Navigate the financial markets with confidence using FinanceHub’s real-time data and actionable
+                        insights. Whether you’re tracking stocks, cryptocurrencies, or forex, our platform delivers
+                        up-to-the-minute information to empower your decisions.</p>
+                    <ul>
+                        <li>Live price tracking with interactive charts</li>
+                        <li>Advanced technical indicators for precise analysis</li>
+                        <li>Customizable watchlists tailored to your portfolio</li>
+                        <li>Historical data for trend identification</li>
+                        <li>Multi-asset comparison tools</li>
+                    </ul>
+                    <p>Our insights are powered by industry-leading data providers, ensuring accuracy and reliability.
+                        From spotting emerging trends to monitoring market shifts, FinanceHub equips you with the tools
+                        to stay ahead of the curve.</p>
+                    <p>With a user-friendly interface, you can dive deep into market dynamics or get a quick
+                        overview—whatever suits your trading style. Start making informed decisions today with
+                        FinanceHub’s unparalleled market intelligence.</p>
+                </div>
 
-        <section class="latest-news">
-            <h2>Top Stories</h2>
-            <article class="news-item">
-                <h3>Stock Market Hits Record High</h3>
-                <p>Global indices soar as investor confidence grows in 2025.</p>
-            </article>
-            <article class="news-item">
-                <h3>Crypto Market Update</h3>
-                <p>Bitcoin and Ethereum show strong gains amid regulatory clarity.</p>
-            </article>
-        </section>
+                <div class="feature-card">
+                    <h3>Trading Tools</h3>
+                    <p>Transform your trading experience with FinanceHub’s suite of intelligent tools, designed to
+                        streamline your strategy and maximize returns. Our platform caters to traders of all levels,
+                        offering powerful features to optimize performance.</p>
+                    <ul>
+                        <li>Smart portfolio analyzer with performance insights</li>
+                        <li>Risk management calculators for balanced trading</li>
+                        <li>Real-time performance tracking dashboard</li>
+                        <li>Automated trade suggestions based on market trends</li>
+                        <li>Custom alerts for price and volatility changes</li>
+                    </ul>
+                    <p>Whether you’re a novice exploring the markets or a seasoned trader refining your approach,
+                        FinanceHub adapts to your needs. Our tools simplify complex processes, letting you focus on what
+                        matters: building wealth.</p>
+                    <p>From risk assessment to portfolio diversification, our platform provides actionable insights to
+                        enhance your trading decisions. Experience the confidence of trading smarter with FinanceHub’s
+                        cutting-edge tools.</p>
+                </div>
 
-        <section class="call-to-action">
-            <h2>Join Our Community</h2>
-            <p>Sign up today to unlock premium tools and exclusive insights.</p>
+                <div class="feature-card">
+                    <h3>Financial News</h3>
+                    <p>Stay ahead of market movements with FinanceHub’s fast, reliable, and curated financial news. Our
+                        platform delivers the latest updates to keep you informed and ready to act on emerging
+                        opportunities.</p>
+                    <ul>
+                        <li>24/7 breaking news alerts for immediate updates</li>
+                        <li>Expert commentary and in-depth analysis</li>
+                        <li>Global coverage: markets, economy, politics, and tech</li>
+                        <li>Customizable news filters for your interests</li>
+                        <li>Exclusive reports on market-moving events</li>
+                    </ul>
+                    <p>Our news feed is curated from trusted global sources, ensuring you get accurate and relevant
+                        information. Whether it’s a policy change, a corporate earnings report, or a geopolitical event,
+                        FinanceHub keeps you in the know.</p>
+                    <p>Never miss a critical update—our platform delivers real-time alerts and insights to help you
+                        seize opportunities and mitigate risks. With FinanceHub, you’re always one step ahead of the
+                        market.</p>
+                </div>
+            </div>
         </section>
+        <a href="News.html" style="text-decoration: none; color: white;">
+            <section class="news">
+                <div class="newsDiv">
+                    <h2>News</h2>
+                </div>
+            </section>
+        </a>
     </main>
 
     <footer>
@@ -274,17 +309,16 @@
         </div>
         <div class="social-media">
             <p>Follow Us: <a href="https://www.instagram.com/farhan.cc9/" target="_blank"
-                    style="text-decoration: none; color: white;">Instagram</a>
-                &nbsp;|&nbsp;
+                    style="text-decoration: none; color: white;">Instagram</a> |
                 <a href="https://linkedin.com/in/abdulrahmanfarhan" target="_blank"
-                    style="text-decoration: none; color: white;">Linkedin</a>
-                &nbsp;|&nbsp;
+                    style="text-decoration: none; color: white;">Linkedin</a> |
                 <a href="https://github.com/abdulrahmanfarhan" target="_blank"
                     style="text-decoration: none; color: white;">github</a>
             </p>
         </div>
         <div class="contact-info">
-            <p>Email: abdulrahmanfarhan1985@gmail.com</p>
+            <p>Email: <a target="_blank" style="text-decoration: none;"
+                    href="mailto:abdulrahmanfarhan1985@gmail.com">abdulrahmanfarhan1985@gmail.com</a></p>
             <p>Phone: +962780546803</p>
         </div>
     </footer>

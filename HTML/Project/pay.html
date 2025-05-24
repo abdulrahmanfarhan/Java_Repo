@@ -14,186 +14,170 @@
         }
 
         body {
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
             color: #333;
-            background: linear-gradient(135deg, #f4f7fa 0%, #e0e7ff 100%);
+            line-height: 1.6;
+            background-color: #f8fafc;
         }
 
         header {
+            background-color: #1a2a44;
+            color: #fff;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: #1a2a44;
-            color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo-container h1 {
-            font-size: 28px;
-            font-weight: 900;
+            font-size: 1.75rem;
+            font-weight: 700;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
+            gap: 1.5rem;
         }
 
         nav ul li a {
-            text-decoration: none;
             color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         nav ul li a:hover,
         nav ul li a.active {
             color: #00aaff;
-            transform: scale(1.1);
         }
 
         .deposit-section {
-            padding: 60px 20px;
+            padding: 2rem 1rem;
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
 
         .deposit-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #1a2a44;
-            animation: fadeIn 1s ease-in-out;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1rem;
         }
 
         .deposit-section p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 40px;
+            font-size: 1.125rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
         }
 
         .payment-options {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         .payment-option {
-            width: 200px;
-            height: 200px;
-            padding: 20px;
             background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
             cursor: pointer;
-            text-align: center;
+        }
+
+        .payment-option img {
+            width: 100%;
+            height: 200px;
+            object-fit: scale-down;
+            padding: 1.5rem;
         }
 
         .payment-option:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0, 170, 255, 0.2);
-        }
-
-        .payment-option h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #1a2a44;
-        }
-
-        .payment-option p {
-            font-size: 14px;
-            color: #666;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .deposit-form {
             background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            animation: slideUp 0.8s ease-in-out;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
             text-align: left;
         }
 
         .form-group label {
             display: block;
-            font-size: 16px;
-            color: #1a2a44;
-            margin-bottom: 8px;
+            font-size: 1rem;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            font-size: 1rem;
         }
 
         .form-group input:focus,
         .form-group select:focus {
             border-color: #00aaff;
-            box-shadow: 0 0 8px rgba(0, 170, 255, 0.3);
             outline: none;
         }
 
         .submit-btn {
-            display: inline-block;
-            padding: 12px 24px;
+            display: block;
+            padding: 0.75rem;
             background-color: #00aaff;
             color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            width: 100%;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
             text-align: center;
+            cursor: pointer;
+            width: 100%;
+            text-decoration: none;
         }
 
         .submit-btn:hover {
             background-color: #0088cc;
-            transform: scale(1.05);
         }
 
         footer {
-            padding: 20px;
             background-color: #1a2a44;
             color: #fff;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
         }
 
         .footer-links ul {
             list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
         .footer-links ul li a {
-            text-decoration: none;
             color: #fff;
-            font-size: 14px;
+            text-decoration: none;
+            font-size: 0.9rem;
         }
 
         .footer-links ul li a:hover {
@@ -202,19 +186,20 @@
 
         .social-media p,
         .contact-info p {
-            font-size: 14px;
+            font-size: 0.9rem;
         }
 
         .logout {
             background-color: #ff0000;
-            color: white;
-            padding: 10px;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1rem;
         }
 
         .logout:hover {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            padding: 10px;
+            background-color: #e60000;
         }
     </style>
 </head>
@@ -223,7 +208,7 @@
     <header>
         <div class="logo-container">
             <a href="Home.html" style="text-decoration: none; color: white;">
-                <h1>FinanceHub</h1>
+                <h1>Farhan_Finance</h1>
             </a>
         </div>
         <nav>
@@ -231,7 +216,6 @@
                 <li><a href="Home.html">Home</a></li>
                 <li><a href="Markets.html">Markets</a></li>
                 <li><a href="News.html">News</a></li>
-                <li><a href="Banking.html">Banking</a></li>
                 <li><a href="pay.html" class="active">payment</a></li>
                 <li><a href="login.html" class="logout">Log Out</a></li>
             </ul>
@@ -242,28 +226,21 @@
         <section class="deposit-section">
             <h2>Deposit Funds to Your Wallet</h2>
             <p>Choose a payment method and add funds to start trading instantly.</p>
-            <div class="payment-options"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-
-                <div class="payment-option" style="padding: 0;">
-                    <img src="img/apple-pay.png" alt="Credit Card"
-                        style="width: 100%; height: 100%; object-fit: scale-down; display: block; border-radius: 8px; padding: 30px;;">
+            <div class="payment-options">
+                <div class="payment-option">
+                    <img src="img/apple-pay.png" alt="Apple Pay">
                 </div>
-                <div class="payment-option" style="padding: 0;">
-                    <img src="img/google-pay.png" alt="Credit Card"
-                        style="width: 100%; height: 100%; object-fit: scale-down; display: block; border-radius: 8px; padding: 30px;;">
+                <div class="payment-option">
+                    <img src="img/google-pay.png" alt="Google Pay">
                 </div>
-                <div class="payment-option" style="padding: 0;">
-                    <img src="img/pay pal.png" alt="Credit Card"
-                        style="width: 100%; height: 100%; object-fit: scale-down; display: block; border-radius: 8px; padding: 20px;;">
+                <div class="payment-option">
+                    <img src="img/pay pal.png" alt="PayPal">
                 </div>
             </div>
-
-
             <form class="deposit-form">
                 <div class="form-group">
                     <label for="payment-method">Payment Method</label>
-                    <select id="payment-method" name="payment-method">
+                    <select id="payment-method" name="payment-method" required>
                         <option value="">Select a method</option>
                         <option value="credit-card">Credit/Debit Card</option>
                         <option value="bank-transfer">Bank Transfer</option>
@@ -291,7 +268,7 @@
                     <label for="cvv">CVV (for cards)</label>
                     <input type="text" id="cvv" name="cvv" placeholder="CVV" pattern="\d{3,4}">
                 </div>
-                <button type="submit" class="submit-btn">Deposit Now</button>
+                <a href="Markets.html" class="submit-btn">Deposit Now</a>
             </form>
         </section>
     </main>
@@ -306,17 +283,16 @@
         </div>
         <div class="social-media">
             <p>Follow Us: <a href="https://www.instagram.com/farhan.cc9/" target="_blank"
-                    style="text-decoration: none; color: white;">Instagram</a>
-                &nbsp;|&nbsp;
+                    style="text-decoration: none; color: white;">Instagram</a> |
                 <a href="https://linkedin.com/in/abdulrahmanfarhan" target="_blank"
-                    style="text-decoration: none; color: white;">Linkedin</a>
-                &nbsp;|&nbsp;
+                    style="text-decoration: none; color: white;">Linkedin</a> |
                 <a href="https://github.com/abdulrahmanfarhan" target="_blank"
                     style="text-decoration: none; color: white;">github</a>
             </p>
         </div>
         <div class="contact-info">
-            <p>Email: abdulrahmanfarhan1985@gmail.com</p>
+            <p>Email: <a target="_blank" style="text-decoration: none;"
+                    href="mailto:abdulrahmanfarhan1985@gmail.com">abdulrahmanfarhan1985@gmail.com</a></p>
             <p>Phone: +962780546803</p>
         </div>
     </footer>

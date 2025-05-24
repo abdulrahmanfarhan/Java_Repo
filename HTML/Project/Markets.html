@@ -14,104 +14,100 @@
         }
 
         body {
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
             color: #333;
+            line-height: 1.6;
+            background-color: #f8fafc;
         }
 
         header {
+            background-color: #1a2a44;
+            color: #fff;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: #1a2a44;
-            color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo-container h1 {
-            font-size: 28px;
-            font-weight: 900;
+            font-size: 1.75rem;
+            font-weight: 700;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
+            gap: 1.5rem;
         }
 
         nav ul li a {
-            text-decoration: none;
             color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         nav ul li a:hover,
         nav ul li a.active {
             color: #00aaff;
-            transform: scale(1.1);
         }
 
         .hero {
-            background-image: url('img/1.png');
-            background-repeat: no-repeat;
-            background-position: center;
+            background-image: url('img/market.png');
             background-size: cover;
-
-            height: 620px;
-            background-color: #f4f7fa;
+            background-position: center;
+            height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            padding: 1rem;
+            color: #fff;
         }
 
         .hero h2 {
-            font-size: 36px;
-            margin-bottom: 15px;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #666;
+            font-size: 1.125rem;
+            max-width: 600px;
         }
 
         .trading-section {
-            padding: 40px 20px;
+            padding: 2rem 1rem;
             background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .trading-section h2 {
-            font-size: 28px;
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 30px;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
         }
 
         .asset-table {
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
             border-collapse: collapse;
-            background-color: #f9f9f9;
+            background-color: #fff;
             border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .asset-table th,
         .asset-table td {
-            padding: 15px;
+            padding: 1rem;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         .asset-table th {
@@ -125,27 +121,28 @@
         }
 
         .asset-table .price {
-            color: #333;
-            font-weight: 700;
+            font-weight: 600;
+            color: #1a202c;
         }
 
         .asset-table .change-positive {
             color: #28a745;
+            font-weight: 600;
         }
 
         .asset-table .change-negative {
             color: #dc3545;
+            font-weight: 600;
         }
 
         .buy-btn,
         .sell-btn {
             display: inline-block;
-            padding: 8px 16px;
+            padding: 0.5rem 1rem;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: background-color 0.3s;
-            margin-right: 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
         }
 
         .buy-btn {
@@ -168,34 +165,32 @@
 
         .call-to-action {
             background-image: url('img/2.jpg');
-            background-repeat: no-repeat;
-            background-position: center;
             background-size: cover;
-            padding: 40px 20px;
-            background-color: #ffffff;
+            background-position: center;
+            padding: 2rem 1rem;
             text-align: center;
+            color: #fff;
         }
 
         .call-to-action h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
         }
 
         .call-to-action p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 0.75rem 1.5rem;
             background-color: #00aaff;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s;
+            border-radius: 4px;
+            font-size: 1rem;
         }
 
         .cta-button:hover {
@@ -203,60 +198,50 @@
         }
 
         footer {
-            padding: 20px;
             background-color: #1a2a44;
             color: #fff;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .footer-links ul {
             list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
         .footer-links ul li a {
-            text-decoration: none;
             color: #fff;
-            font-size: 14px;
+            text-decoration: none;
+            font-size: 0.9rem;
         }
 
         .footer-links ul li a:hover {
             color: #00aaff;
         }
 
-        .social-media p {
-            font-size: 14px;
-        }
-
+        .social-media p,
         .contact-info p {
-            font-size: 14px;
+            font-size: 0.9rem;
         }
 
         .logout {
             background-color: #ff0000;
-            color: white;
-            padding: 10px;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1rem;
         }
 
         .logout:hover {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            padding: 10px;
+            background-color: #e60000;
         }
-
-        .call-to-action p,
-        h2 {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            color: white;
-        }
-
-        .hero h1,
-        p {}
     </style>
 </head>
 
@@ -264,7 +249,7 @@
     <header>
         <div class="logo-container">
             <a href="Home.html" style="text-decoration: none; color: white;">
-                <h1>FinanceHub</h1>
+                <h1>Farhan_Finance</h1>
             </a>
         </div>
         <nav>
@@ -272,7 +257,6 @@
                 <li><a href="Home.html">Home</a></li>
                 <li><a href="Markets.html" class="active">Markets</a></li>
                 <li><a href="News.html">News</a></li>
-                <li><a href="Banking.html">Banking</a></li>
                 <li><a href="pay.html">payment</a></li>
                 <li><a href="login.html" class="logout">Log Out</a></li>
             </ul>
@@ -360,7 +344,7 @@
                     </tr>
                     <tr>
                         <td>Berkshire Hathaway Inc. (BRK)</td>
-                        <td class="price">$2969.06 </td>
+                        <td class="price">$2969.06</td>
                         <td class="change-negative">-1.80%</td>
                         <td>
                             <a href="pay.html" class="buy-btn">Buy</a>
@@ -433,17 +417,16 @@
         </div>
         <div class="social-media">
             <p>Follow Us: <a href="https://www.instagram.com/farhan.cc9/" target="_blank"
-                    style="text-decoration: none; color: white;">Instagram</a>
-                &nbsp;|&nbsp;
+                    style="text-decoration: none; color: white;">Instagram</a> |
                 <a href="https://linkedin.com/in/abdulrahmanfarhan" target="_blank"
-                    style="text-decoration: none; color: white;">Linkedin</a>
-                &nbsp;|&nbsp;
+                    style="text-decoration: none; color: white;">Linkedin</a> |
                 <a href="https://github.com/abdulrahmanfarhan" target="_blank"
                     style="text-decoration: none; color: white;">github</a>
             </p>
         </div>
         <div class="contact-info">
-            <p>Email: abdulrahmanfarhan1985@gmail.com</p>
+            <p>Email: <a target="_blank" style="text-decoration: none;"
+                    href="mailto:abdulrahmanfarhan1985@gmail.com">abdulrahmanfarhan1985@gmail.com</a></p>
             <p>Phone: +962780546803</p>
         </div>
     </footer>

@@ -379,14 +379,15 @@ public class Bank_UI {
     private int getValidIntInput(String prompt, int min, int max) {
         while (true) {
             System.out.print(prompt);
-            try {
-                int input = Integer.parseInt(s.nextLine());
+            String inputStr = s.nextLine();
+            if (inputStr.matches("-?\\d+")) {
+                int input = Integer.parseInt(inputStr);
                 if (input >= min && input <= max) {
                     return input;
                 }
-                System.out.println("Error: Please enter a number between " + min + " and " + max + ".");
-            } catch (NumberFormatException e) {
-                System.out.println("Error: Please enter a valid number.");
+                System.out.println("Enter a number between " + min + " and " + max + ".");
+            } else {
+                System.out.println("Enter a valid number.");
             }
         }
     }
@@ -394,14 +395,15 @@ public class Bank_UI {
     private double getValidDoubleInput(String prompt, double min, double max) {
         while (true) {
             System.out.print(prompt);
-            try {
-                double input = Double.parseDouble(s.nextLine());
+            String inputStr = s.nextLine();
+            if (inputStr.matches("-?\\d+(\\.\\d+)?")) {
+                double input = Double.parseDouble(inputStr);
                 if (input >= min && input <= max) {
                     return input;
                 }
-                System.out.println("Error: Please enter a number between " + min + " and " + max + ".");
-            } catch (NumberFormatException e) {
-                System.out.println("Error: Please enter a valid number.");
+                System.out.println("Enter a number between " + min + " and " + max + ".");
+            } else {
+                System.out.println("Enter a valid number.");
             }
         }
     }

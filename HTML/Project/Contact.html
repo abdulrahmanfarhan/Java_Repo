@@ -21,44 +21,38 @@
         }
 
         header {
+            background-color: #1a2a44;
+            color: #fff;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: #1a2a44;
-            color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo-container h1 {
-            font-size: 28px;
-            font-weight: 900;
+            font-size: 1.75rem;
+            font-weight: 700;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
+            gap: 1.5rem;
         }
 
         nav ul li a {
-            text-decoration: none;
             color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         nav ul li a:hover,
         nav ul li a.active {
             color: #00aaff;
-            transform: scale(1.1);
         }
 
         .contact-section {
@@ -119,7 +113,6 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 16px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .form-group input:focus,
@@ -143,7 +136,6 @@
             border-radius: 5px;
             font-size: 16px;
             font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.3s ease;
             width: 100%;
             text-align: center;
             border: none;
@@ -152,7 +144,6 @@
 
         .submit-btn:hover {
             background-color: #0088cc;
-            transform: scale(1.05);
         }
 
         section {
@@ -175,11 +166,6 @@
             object-position: center;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .map-section img:hover {
-            transform: scale(1.05);
         }
 
         footer {
@@ -213,37 +199,19 @@
         .social-media p,
         .contact-info p {
             font-size: 14px;
-
-
-            .about-content {
-                flex-direction: column;
-            }
-
-            .about-image img {
-                max-width: 100%;
-                height: 200px;
-            }
-
-            .team-grid,
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .team-card img {
-                height: 150px;
-            }
         }
 
         .logout {
             background-color: #ff0000;
-            color: white;
-            padding: 10px;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1rem;
         }
 
         .logout:hover {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            padding: 10px;
+            background-color: #e60000;
         }
     </style>
 </head>
@@ -252,7 +220,7 @@
     <header>
         <div class="logo-container">
             <a href="Home.html" style="text-decoration: none; color: white;">
-                <h1>FinanceHub</h1>
+                <h1>Farhan_Finance</h1>
             </a>
         </div>
         <nav>
@@ -260,13 +228,11 @@
                 <li><a href="Home.html">Home</a></li>
                 <li><a href="Markets.html">Markets</a></li>
                 <li><a href="News.html">News</a></li>
-                <li><a href="Banking.html">Banking</a></li>
                 <li><a href="pay.html">payment</a></li>
                 <li><a href="login.html" class="logout">Log Out</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
         <section class="contact-section">
             <h1>Contact Us</h1>
@@ -291,25 +257,22 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <a href="Home.html">
+                            <div class="submit-btn">Send Message</div>
+                        </a>
                     </form>
                 </div>
 
                 <div class="contact-info">
                     <h2>Get in Touch</h2>
-                    <p><strong>Email:</strong> <a href="mailto:support@financehub.com">support@financehub.com</a></p>
-                    <p><strong>Phone:</strong> +1-800-123-4567</p>
-                    <p><strong>Address:</strong> FinanceHub, 123 Financial Street, Suite 100, New York, NY 10001, USA
-                    </p>
+                    <p><strong>Email:</strong> <a target="_blank" style="text-decoration: none;"
+                            href="mailto:abdulrahmanfarhan1985@gmail.com">abdulrahmanfarhan1985@gmail.com</a></p>
+                    <p><strong>Phone:</strong> +962780546803</p>
                     <p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM (EST)</p>
-                    <p>Follow us on social media: <a href="#">Twitter</a> | <a href="#">LinkedIn</a> | <a
-                            href="#">Instagram</a></p>
+                    <p>Follow us on social media: <a target="_blank" href="https://x.com/home">Twitter</a> | <a
+                            target="_blank" href="https://github.com/abdulrahmanfarhan">LinkedIn</a> | <a
+                            target="_blank" href="https://www.instagram.com/farhan.cc9/">Instagram</a></p>
                 </div>
-            </div>
-
-            <div class="map-section">
-                <h2>Our Location</h2>
-                <img src="map-image.jpg" alt="FinanceHub Location Map">
             </div>
         </section>
     </main>
@@ -324,17 +287,16 @@
         </div>
         <div class="social-media">
             <p>Follow Us: <a href="https://www.instagram.com/farhan.cc9/" target="_blank"
-                    style="text-decoration: none; color: white;">Instagram</a>
-                &nbsp;|&nbsp;
+                    style="text-decoration: none; color: white;">Instagram</a> |
                 <a href="https://linkedin.com/in/abdulrahmanfarhan" target="_blank"
-                    style="text-decoration: none; color: white;">Linkedin</a>
-                &nbsp;|&nbsp;
+                    style="text-decoration: none; color: white;">Linkedin</a> |
                 <a href="https://github.com/abdulrahmanfarhan" target="_blank"
                     style="text-decoration: none; color: white;">github</a>
             </p>
         </div>
         <div class="contact-info">
-            <p>Email: abdulrahmanfarhan1985@gmail.com</p>
+            <p>Email: <a target="_blank" style="text-decoration: none;"
+                    href="mailto:abdulrahmanfarhan1985@gmail.com">abdulrahmanfarhan1985@gmail.com</a></p>
             <p>Phone: +962780546803</p>
         </div>
     </footer>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinanceHub - News</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,246 +14,200 @@
         }
 
         body {
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
             color: #333;
-            background: linear-gradient(135deg, #f4f7fa 0%, #e0e7ff 100%);
+            line-height: 1.6;
+            background-color: #f8fafc;
         }
 
         header {
+            background-color: #1a2a44;
+            color: #fff;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: #1a2a44;
-            color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo-container h1 {
-            font-size: 28px;
-            font-weight: 900;
+            font-size: 1.75rem;
+            font-weight: 700;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
+            gap: 1.5rem;
         }
 
         nav ul li a {
-            text-decoration: none;
             color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         nav ul li a:hover,
         nav ul li a.active {
             color: #00aaff;
-            transform: scale(1.1);
         }
 
         .hero {
-            height: 500px;
-            background-color: #f4f7fa;
+            height: 400px;
+            background-color: #1a2a44;
+            position: relative;
             display: flex;
             align-items: center;
-            padding: 40px;
-            position: relative;
+            padding: 2rem;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(26, 42, 68, 0.7), transparent);
-            z-index: 1;
         }
 
         .hero img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 0;
+            opacity: 0.7;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
             max-width: 600px;
             color: #fff;
         }
 
         .hero-content h2 {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            animation: fadeIn 1s ease-in-out;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .hero-content p {
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
         }
 
         .hero-content a {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 0.75rem 1.5rem;
             background-color: #00aaff;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 4px;
+            font-size: 1rem;
         }
 
         .hero-content a:hover {
             background-color: #0088cc;
-            transform: translateY(-3px);
         }
 
         .news-section {
-            padding: 60px 40px;
+            padding: 2rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
+            background-color: #fff;
         }
 
         .news-section h2 {
-            font-size: 36px;
-            font-weight: 900;
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 40px;
-            color: #1a2a44;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
         }
 
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .news-card {
-            background: #fff;
-            border-radius: 10px;
+        .news-article {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: slideUp 0.8s ease-in-out;
         }
 
-        .news-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0, 170, 255, 0.2);
-        }
-
-        .news-card img {
-            width: 100%;
-            height: 200px;
+        .news-article img {
+            flex: 1;
+            min-width: 300px;
+            max-height: 250px;
             object-fit: cover;
-            object-position: center;
         }
 
-        .news-card-content {
-            padding: 20px;
+        .news-article-content {
+            flex: 2;
+            min-width: 300px;
+            padding: 1.5rem;
         }
 
-        .news-card-content h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #1a2a44;
+        .news-article-content h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 0.5rem;
         }
 
-        .news-card-content p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .news-card-content a {
-            display: inline-block;
-            color: #00aaff;
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-
-        .news-card-content a:hover {
-            color: #0088cc;
+        .news-article-content p {
+            font-size: 1rem;
+            color: #555;
         }
 
         .call-to-action {
-            padding: 60px 40px;
+            padding: 3rem 1rem;
             background-color: #1a2a44;
             text-align: center;
             color: #fff;
         }
 
         .call-to-action h2 {
-            font-size: 36px;
-            font-weight: 900;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .call-to-action p {
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
         }
 
         .call-to-action a {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 0.75rem 1.5rem;
             background-color: #00aaff;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 4px;
+            font-size: 1rem;
         }
 
         .call-to-action a:hover {
             background-color: #0088cc;
-            transform: scale(1.05);
         }
 
         footer {
-            padding: 20px 40px;
             background-color: #1a2a44;
             color: #fff;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .footer-links ul {
             list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
         .footer-links ul li a {
-            text-decoration: none;
             color: #fff;
-            font-size: 14px;
-            transition: color 0.3s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
         }
 
         .footer-links ul li a:hover {
@@ -262,19 +216,20 @@
 
         .social-media p,
         .contact-info p {
-            font-size: 14px;
+            font-size: 0.9rem;
         }
 
         .logout {
             background-color: #ff0000;
-            color: white;
-            padding: 10px;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1rem;
         }
 
         .logout:hover {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            padding: 10px;
+            background-color: #e60000;
         }
     </style>
 </head>
@@ -283,7 +238,7 @@
     <header>
         <div class="logo-container">
             <a href="Home.html" style="text-decoration: none; color: white;">
-                <h1>FinanceHub</h1>
+                <h1>Farhan_Finance</h1>
             </a>
         </div>
         <nav>
@@ -291,7 +246,6 @@
                 <li><a href="Home.html">Home</a></li>
                 <li><a href="Markets.html">Markets</a></li>
                 <li><a href="News.html" class="active">News</a></li>
-                <li><a href="Banking.html">Banking</a></li>
                 <li><a href="pay.html">payment</a></li>
                 <li><a href="login.html" class="logout">Log Out</a></li>
             </ul>
@@ -300,56 +254,153 @@
 
     <main>
         <section class="hero">
-            <img src="hero-image.jpg" alt="Featured News Image">
+            <img src="img/News_Wall.jpg" alt="Featured News Image">
             <div class="hero-content">
                 <h2>Global Markets Surge Amid Economic Optimism</h2>
                 <p>Stay informed with the latest financial news and insights from around the world.</p>
-                <a href="#">Read More</a>
             </div>
         </section>
 
         <section class="news-section">
-            <h2>Latest Financial News</h2>
-            <div class="news-grid">
-                <article class="news-card">
-                    <img src="article1.jpg" alt="Article 1 Image" width="100%" height="200">
-                    <div class="news-card-content">
-                        <h3>Tech Stocks Lead Market Rally in Q2 2025</h3>
-                        <p>Major tech companies drive unprecedented gains as innovation fuels investor confidence.</p>
-                        <a href="#">Read Full Story</a>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <img src="article2.jpg" alt="Article 2 Image" width="100%" height="200">
-                    <div class="news-card-content">
-                        <h3>Central Banks Tighten Monetary Policy</h3>
-                        <p>Interest rate hikes signal a shift in global economic strategies.</p>
-                        <a href="#">Read Full Story</a>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <img src="article3.jpg" alt="Article 3 Image" width="100%" height="200">
-                    <div class="news-card-content">
-                        <h3>Cryptocurrency Regulations Take Shape</h3>
-                        <p>New policies aim to balance innovation and investor protection in 2025.</p>
-                        <a href="#">Read Full Story</a>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <img src="article4.jpg" alt="Article 4 Image" width="100%" height="200">
-                    <div class="news-card-content">
-                        <h3>Commodities Boom: Gold Hits Record High</h3>
-                        <p>Investors flock to safe-haven assets amid market volatility.</p>
-                        <a href="#">Read Full Story</a>
-                    </div>
-                </article>
-            </div>
+            <h2>News</h2>
+            <article class="news-article">
+                <img src="img/108150208-1748032225600-IMG_7627_2.webp" alt="First news image">
+                <div class="news-article-content">
+                    <h3>At Trump’s $148M Meme Coin Dinner, Food Disappointed and Security Was Lax</h3>
+                    <p>President Donald Trump’s meme coin dropped 16% after a gala at his Virginia golf club, where 220
+                        attendees, including crypto influencers and executives, spent $148M to attend. Complaints
+                        included poor food quality and minimal interaction with Trump, who left after 23 minutes.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="img/-1x-1.webp" alt="Second news image">
+                <div class="news-article-content">
+                    <h3>Trump Proposes 50% Tariff on EU, Rejects Trade Deal</h3>
+                    <p>President Trump announced a 50% tariff on the EU starting June 2025, citing stalled trade talks.
+                        The move led to a 2% drop in European markets, raising concerns about global economic impacts
+                        amid his aggressive tariff strategy.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="img/a2c8ad18c595c0b06360b8f4b2e8b123.jpeg" alt="Third news image">
+                <div class="news-article-content">
+                    <h3>Nvidia CEO Praises Trump’s Re-Industrialization as ‘Visionary’</h3>
+                    <p>Nvidia CEO Jensen Huang lauded President Trump’s tech policies during a Swedish AI infrastructure
+                        partnership announcement. Huang highlighted Trump’s focus on boosting U.S. manufacturing and
+                        global competitiveness.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="img/BitCoin.png" alt="Third news image">
+                <div class="news-article-content">
+                    <h3>Bitcoin is an innovative payment network and a new kind of money.</h3>
+                    <p>Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing
+                        transactions and the issuing of bitcoins is carried out collectively by the network. Bitcoin is
+                        open-source; its design is public, nobody owns or controls Bitcoin and everyone can take part.
+                        Through many of its unique properties, Bitcoin allows exciting uses that could not be covered by
+                        any previous payment system.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="img/d.jpg" alt="Third news image">
+                <div class="news-article-content">
+                    <h3>CheckMag | Samsung Galaxy A smartphones in 2025: Galaxy A56, A36, A26 and A16 in comparison</h3>
+                    <p>The Samsung Galaxy A-series is quite popular and has captured a significant market share in
+                        Europe and many other regions around the world. However, with six smartphones to choose from,
+                        it's not exactly straightforward. Starting at roughly $100, the Galaxy A06 (from $103 on Amazon)
+                        is the entry-level option. This is the only device in the Galaxy A-series that we haven't tested
+                        thus far, so it won't be included in this comparison.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="img/News/2.jpg" alt="Third news image">
+                <div class="news-article-content">
+                    <h3>Cryptocurrency Stablecoins Gain Traction in Global Payments</h3>
+                    <p>Stablecoins, digital currencies pegged to assets like the U.S. dollar, are revolutionizing
+                        cross-border payments with low fees and instant transactions. Unlike traditional banking
+                        systems, stablecoins operate on decentralized blockchains, ensuring transparency and
+                        accessibility. Their growing adoption by businesses and individuals highlights their potential
+                        to streamline global trade and financial inclusion.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="img/News/3.jpg" alt="Third news image">
+                <div class="news-article-content">
+                    <h3>Green Bonds Surge as Investors Prioritize Sustainable Finance</h3>
+                    <p>Green bonds, designed to fund environmentally friendly projects, are seeing record issuance as
+                        investors demand sustainable investment options. These bonds finance renewable energy, clean
+                        transportation, and climate adaptation initiatives. Managed by financial institutions, the green
+                        bond market is transparent, with strict standards ensuring funds are allocated to verified
+                        eco-friendly projects.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="img/News/4.jpg" alt="Third news image">
+                <div class="news-article-content">
+                    <h3>Fintech Startups Redefine Personal Banking with Mobile Apps</h3>
+                    <p>Fintech startups are transforming personal banking through user-friendly mobile apps that offer
+                        budgeting, investing, and lending services. These platforms use open-source technology, allowing
+                        seamless integration with various financial tools. With no traditional bank branches, they
+                        reduce costs and provide accessible, real-time financial management for users worldwide.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="img/News/5.jpg" alt="Third news image">
+                <div class="news-article-content">
+                    <h3>Digital Wallets Overtake Cash in Emerging Markets</h3>
+                    <p>Digital wallets are surpassing cash usage in emerging markets, enabling secure and convenient
+                        transactions via smartphones. Operating on peer-to-peer networks, these wallets eliminate the
+                        need for physical currency or bank intermediaries. Their open design allows anyone with a mobile
+                        device to participate, fostering financial inclusion in underserved regions.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="img/News/6.jpg" alt="Third news image">
+                <div class="news-article-content">
+                    <h3>Blockchain Technology Streamlines Supply Chain Finance</h3>
+                    <p>Blockchain technology is enhancing supply chain finance by providing transparent, tamper-proof
+                        records of transactions between businesses. This decentralized system reduces costs, speeds up
+                        payment settlements, and minimizes fraud risks. Companies across industries can access real-time
+                        data, making supply chain financing more efficient and trustworthy.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="img/News/7.jpg" alt="Third news image">
+                <div class="news-article-content">
+                    <h3>Microfinance Platforms Expand Access to Credit for Small Businesses</h3>
+                    <p>Microfinance platforms are empowering small businesses by offering accessible loans through
+                        digital channels, bypassing traditional banking barriers. These platforms use automated credit
+                        scoring and collective funding models, ensuring affordability and scalability. Their open
+                        approach allows entrepreneurs in remote areas to secure capital and grow their ventures.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="img/News/10.jpg" alt="Third news image">
+                <div class="news-article-content">
+                    <h3>Central Bank Digital Currencies Near Global Rollout</h3>
+                    <p>Central bank digital currencies (CBDCs) are advancing toward global adoption, offering digital
+                        versions of fiat money backed by governments. Unlike cryptocurrencies, CBDCs are centrally
+                        managed, ensuring stability and trust. Their design allows seamless integration with existing
+                        payment systems, promising faster, more secure transactions for consumers and businesses.</p>
+                </div>
+            </article>
         </section>
 
         <section class="call-to-action">
             <h2>Stay Ahead with FinanceHub</h2>
             <p>Subscribe for exclusive news updates and market insights delivered to your inbox.</p>
-            <a href="#">Subscribe Now</a>
+            <a href="pay.html">Subscribe Now</a>
         </section>
     </main>
 
@@ -363,17 +414,16 @@
         </div>
         <div class="social-media">
             <p>Follow Us: <a href="https://www.instagram.com/farhan.cc9/" target="_blank"
-                    style="text-decoration: none; color: white;">Instagram</a>
-                &nbsp;|&nbsp;
+                    style="text-decoration: none; color: white;">Instagram</a> |
                 <a href="https://linkedin.com/in/abdulrahmanfarhan" target="_blank"
-                    style="text-decoration: none; color: white;">Linkedin</a>
-                &nbsp;|&nbsp;
+                    style="text-decoration: none; color: white;">Linkedin</a> |
                 <a href="https://github.com/abdulrahmanfarhan" target="_blank"
                     style="text-decoration: none; color: white;">github</a>
             </p>
         </div>
         <div class="contact-info">
-            <p>Email: abdulrahmanfarhan1985@gmail.com</p>
+            <p>Email: <a target="_blank" style="text-decoration: none;"
+                    href="mailto:abdulrahmanfarhan1985@gmail.com">abdulrahmanfarhan1985@gmail.com</a></p>
             <p>Phone: +962780546803</p>
         </div>
     </footer>
