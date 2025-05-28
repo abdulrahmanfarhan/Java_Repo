@@ -1,169 +1,209 @@
-Bank System
-A Java-based console application for managing banking operations
+# 💼 Bank System
 
-📖 Overview
-The Bank System is a console-based application developed in Java to simulate essential banking operations. It allows users to manage customers, create and handle various account types, process transactions, and perform currency conversions. Designed as an educational project to demonstrate Object-Oriented Programming (OOP) principles, it showcases inheritance, encapsulation, and polymorphism in a real-world banking context.
-This project was developed by Abdulrahman Farhan under the supervision of Dr. Jalal Kiswani at Al-Zaytoonah University of Jordan for educational purposes.
+**A Java-based console application for managing banking operations**
 
-✨ Features
+---
 
-Customer Management: Register and manage customer details (name, email, phone).
-Account Management: Create and manage diverse account types:
-Savings Account
-Checking Account
-Fixed Deposit Account
-Islamic Account
-Loan
+## 📖 Overview
 
+The **Bank System** is a console-based application built in **Java** to simulate core banking operations. It enables users to manage customers, create and handle various account types, process transactions, and perform currency conversions. Designed as an educational project, it demonstrates **Object-Oriented Programming (OOP)** principles, including **inheritance**, **encapsulation**, and **polymorphism**, applied to a real-world banking scenario.
 
-Transaction Processing: Perform deposits, withdrawals, and view transaction histories.
-Interest/Profit Calculation: Compute interest for Savings and Fixed Deposit accounts, profit for Islamic accounts, and monthly payments for Loans.
-Currency Conversion: Convert between USD and JOD using fixed exchange rates.
-User-Friendly Interface: Interactive console-based menu system for seamless navigation.
-Modular Architecture: Organized code structure adhering to OOP principles.
+> **Developed by**: Abdulrahman Farhan  
+> **Supervised by**: Dr. Jalal Kiswani  
+> **Institution**: Al-Zaytoonah University of Jordan  
+> **Purpose**: Educational demonstration of OOP concepts
 
+---
 
-🛠️ Technologies Used
+## ✨ Features
 
-Java: Core programming language for the application.
-Java Standard Library:
-ArrayList for dynamic data storage.
-Scanner for user input.
-LocalDate for handling dates.
+- **Customer Management**: Register and manage customer details (name, email, phone).
+- **Account Management**: Create and manage multiple account types:
+  - 🏦 Savings Account
+  - 💳 Checking Account
+  - 📅 Fixed Deposit Account
+  - 🕌 Islamic Account
+  - 💸 Loan
+- **Transaction Processing**: Perform deposits, withdrawals, and view transaction histories.
+- **Financial Calculations**:
+  - Interest for Savings and Fixed Deposit accounts
+  - Profit for Islamic accounts
+  - Monthly payments for Loans
+- **Currency Conversion**: Convert between USD and JOD using fixed exchange rates.
+- **User-Friendly Interface**: Interactive console-based menu for easy navigation.
+- **Modular Design**: Clean, OOP-based code structure for maintainability.
 
+---
 
-OOP Principles: Inheritance, encapsulation, and polymorphism for modular design.
+## 🛠️ Technologies Used
 
+- **Java**: Core programming language.
+- **Java Standard Library**:
+  - `ArrayList`: For dynamic data storage.
+  - `Scanner`: For handling user input.
+  - `LocalDate`: For date management.
+- **OOP Principles**: Inheritance, encapsulation, and polymorphism for modular design.
+
+---
+
+## 📚 Class Structure
+
+The project is organized into well-defined packages, each serving a specific purpose:
+
+### `com.bank.core`
+- **`Bank`**: Manages the bank entity and maintains a list of customers.
+- **`Customer`**: Stores customer details (ID, name, email, phone) and their accounts.
+
+### `com.bank.accounts`
+- **`Account` (Abstract)**: Base class for all accounts, handling balance, transactions, and core operations (deposit, withdraw).
+- **`CheckingAccount`**: Supports overdraft limits for flexible withdrawals.
+- **`FixedDepositAccount`**: Manages fixed-term deposits with restricted withdrawals and interest calculations.
+- **`IslamicAccount`**: Implements profit-sharing compliant with Islamic banking principles.
+- **`Loan`**: Handles loan-specific features, including interest rates and payment terms.
+- **`SavingAccount`**: Supports interest calculations and withdrawal limits.
 
-📚 Class Structure
-The project is organized into several packages, each with specific responsibilities. Below is an overview of the key classes:
-com.bank.core
+### `com.bank.transactions`
+- **`Transaction`**: Represents a single transaction (deposit or withdrawal) with type, amount, and timestamp.
 
-Bank: Manages the bank entity and maintains a list of customers.
-Customer: Stores customer information (ID, name, email, phone) and their associated accounts.
+### `com.bank.utilities`
+- **`CurrencyConverter`**: Provides static methods for USD-to-JOD and JOD-to-USD conversions.
+- **`InterestCalculator`**: Calculates simple interest or profit for applicable accounts.
 
-com.bank.accounts
+### `com.bank.main`
+- **`Bank_UI`**: Implements the console-based user interface for seamless interaction.
+- **`main`**: Entry point of the application, initializing `Bank_UI`.
 
-Account (Abstract): Base class for all accounts, handling balance, transactions, and core operations (deposit, withdraw).
-CheckingAccount: Extends Account, supports overdraft limits.
-FixedDepositAccount: Extends Account, manages fixed-term deposits with interest and restricted withdrawals.
-IslamicAccount: Extends Account, implements profit-sharing compliant with Islamic banking principles.
-Loan: Extends Account, handles loan-specific features like interest rates and terms.
-SavingAccount: Extends Account, includes interest calculations and withdrawal limits.
+📌 **Class Diagram**: For a detailed visualization, refer to the [UML Class Diagram](BankSystem/UML%20class.pdf) in the repository.
 
-com.bank.transactions
+---
+
+## 🚀 Installation
+
+Follow these steps to set up and run the **Bank System** locally:
+
+### Prerequisites
+- Java Development Kit (JDK) 8 or higher.
+
+### Steps
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/abdulrahmanfarhan/Java-OOP.git
+   cd Java-OOP/BankSystem
+   ```
 
-Transaction: Represents a single transaction (deposit or withdrawal) with type, amount, and timestamp.
+2. **Verify Java Installation**:
+   ```bash
+   java -version
+   ```
+   Ensure JDK 8 or higher is installed.
 
-com.bank.utilities
+3. **Compile the Project**:
+   ```bash
+   javac -d . src/com/bank/*/*.java
+   ```
 
-CurrencyConverter: Provides static methods for USD-to-JOD and JOD-to-USD conversions.
-InterestCalculator: Calculates simple interest or profit for applicable accounts.
+4. **Run the Application**:
+   ```bash
+   java com.bank.main.main
+   ```
 
-com.bank.main
+---
 
-Bank_UI: Implements the console-based user interface for interacting with the system.
-main: Entry point of the application, initializes Bank_UI.
+## 📋 Usage
 
-For a detailed visualization, see the UML Class Diagram in the repository.
+Upon launching, the application prompts for the **bank name** and displays a main menu with the following options:
 
-🚀 Installation
-Follow these steps to set up and run the Bank System locally:
+1. **Register New Customer**: Add a customer with name, email, and phone number.
+2. **Create New Account**: Create an account (Savings, Checking, Fixed Deposit, Islamic, or Loan).
+3. **Manage Accounts**: Perform deposits, withdrawals, view transactions, or calculate interest/profit.
+4. **Currency Conversion**: Convert between USD and JOD.
+5. **Display Bank Info**: View bank details and customer account summaries.
+6. **About**: Display project information and credits.
+7. **Exit**: Close the application.
 
-Clone the Repository:
-git clone https://github.com/abdulrahmanfarhan/Java-OOP.git
-cd Java-OOP/BankSystem
+### Example Workflow
+1. **Start the Application**:
+   ```bash
+   java com.bank.main.main
+   ```
 
+2. **Enter Bank Name**:
+   ```
+   MyBank
+   ```
 
-Verify Java Installation:Ensure Java Development Kit (JDK) 8 or higher is installed:
-java -version
+3. **Register a Customer** (Option 1):
+   ```
+   Enter customer name: John Doe
+   Enter email (optional): john.doe@example.com
+   ✅ Success: Customer John Doe registered with ID 1001
+   ```
 
+4. **Create a Savings Account** (Option 2):
+   ```
+   Select customer: John Doe
+   Choose: 1 (Savings Account)
+   Enter initial balance: 1000
+   Enter withdraw limit: 500
+   Enter annual interest rate (e.g., 0.05 for 5%): 0.05
+   ✅ Success: Account created with ID 1
+   ```
 
-Compile the Project:Compile all Java files in the src directory:
-javac -d . src/com/bank/*/*.java
+5. **Manage Account** (Option 3):
+   - Deposit: `1000`
+   - Withdraw: `200`
+   - View transactions or calculate interest.
 
+---
 
-Run the Application:Execute the main class:
-java com.bank.main.main
+## 📊 UML Diagram
 
+The class structure and relationships (inheritance, associations, attributes, and methods) are detailed in the [UML Class Diagram](BankSystem/UML%20class.pdf) included in the repository.
 
+---
 
+## 🤝 Contributing
 
-📋 Usage
-Upon launching the application, you will be prompted to enter the bank name. The system then presents a main menu with the following options:
+We welcome contributions to enhance the **Bank System**! To contribute:
 
-Register New Customer: Add a customer with name, email, and phone number.
-Create New Account: Create an account (Savings, Checking, Fixed Deposit, Islamic, or Loan) for an existing customer.
-Manage Accounts: Perform operations like deposit, withdrawal, view transactions, or calculate interest/profit.
-Currency Conversion: Convert amounts between USD and JOD.
-Display Bank Info: View bank details and customer account summaries.
-About: Display project information and credits.
-Exit: Close the application.
+1. Fork the repository.
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your feature"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/your-feature
+   ```
+5. Open a pull request with a detailed description of your changes.
 
-Example Workflow
+Please adhere to the project's coding standards and include clear comments.
 
-Start the Application:
-java com.bank.main.main
+---
 
+## 📜 License
 
-Enter Bank Name:
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
-Input: MyBank
+---
 
+## 📬 Contact
 
-Register a Customer (Option 1):
+For questions or support, please contact:  
+📧 **Abdulrahman Farhan** – [abdulrahmanfarhan1985@gmail.com](mailto:abdulrahmanfarhan1985@gmail.com)  
+Or open an issue on [GitHub](https://github.com/abdulrahmanfarhan/Java-OOP/issues).
 
-Input: Enter customer name: John Doe
-Input: Enter email (optional): john.doe@example.com
-Output: Success: Customer John Doe registered with ID 1001
+---
 
+## 🙏 Acknowledgments
 
-Create a Savings Account (Option 2):
+- **Dr. Jalal Kiswani**: Project supervisor at Al-Zaytoonah University of Jordan.
+- **Al-Zaytoonah University of Jordan**: For providing the academic environment for this project.
 
-Select customer, choose 1 for Savings Account.
-Input: Enter initial balance: 1000
-Input: Enter withdraw limit: 500
-Input: Enter annual interest rate (e.g., 0.05 for 5%): 0.05
-Output: Success: Account created with ID 1
+---
 
-
-Manage Account (Option 3):
-
-Select account and perform actions like deposit (1000), withdrawal (200), or view transactions.
-
-
-
-
-📊 UML Diagram
-The class relationships and structure are detailed in the UML Class Diagram included in the repository. This diagram illustrates inheritance, associations, and class attributes/methods.
-
-🤝 Contributing
-Contributions are welcome! To contribute to the Bank System:
-
-Fork the repository.
-Create a feature branch:git checkout -b feature/your-feature
-
-
-Commit your changes:git commit -m "Add your feature"
-
-
-Push to the branch:git push origin feature/your-feature
-
-
-Open a pull request with a clear description of your changes.
-
-Please ensure your code follows the project's coding standards and includes comments for clarity.
-
-📜 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-📬 Contact
-For questions or support, please contact Abdulrahman Farhan at [abdulrahmanfarhan1985@gmail.com] or open an issue on GitHub.
-
-🙏 Acknowledgments
-
-Dr. Jalal Kiswani: Project supervisor at Al-Zaytoonah University of Jordan.
-Al-Zaytoonah University of Jordan: For providing the academic environment to develop this project.
-
-
-© 2025 Abdulrahman Farhan. All rights reserved.
+**© 2025 Abdulrahman Farhan. All rights reserved.**
