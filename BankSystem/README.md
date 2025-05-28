@@ -73,7 +73,7 @@ The project is organized into well-defined packages, each serving a specific pur
 - **`Bank_UI`**: Implements the console-based user interface for seamless interaction.
 - **`main`**: Entry point of the application, initializing `Bank_UI`.
 
-📌 **Class Diagram**: For a detailed visualization, refer to the [UML Class Diagram](BankSystem/UML%20class.pdf) in the repository.
+📌 **Class Diagram**: For a detailed visualization, refer to the [UML Class Diagram](https://github.com/abdulrahmanfarhan/Java-OOP/blob/master/BankSystem/UML%20class.pdf) in the repository.
 
 ---
 
@@ -158,7 +158,7 @@ Upon launching, the application prompts for the **bank name** and displays a mai
 
 ## 📊 UML Diagram
 
-The class structure and relationships (inheritance, associations, attributes, and methods) are detailed in the [UML Class Diagram](BankSystem/UML%20class.pdf) included in the repository.
+The class structure and relationships (inheritance, associations, attributes, and methods) are detailed in the [UML Class Diagram](https://github.com/abdulrahmanfarhan/Java-OOP/blob/master/BankSystem/UML%20class.pdf) included in the repository.
 
 ---
 
