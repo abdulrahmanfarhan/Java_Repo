@@ -7,6 +7,7 @@ Extra\RunwayLengthCalculator.class
 edu\zuj\oop\computer\Test.class
 Extra\DrivingCostCalculator.class
 Extra\EnglishLettersArrays\EnglishLettersArrays.class
+chapter11\InheritanceAndPolymorphism\Event\Event.class
 Extra\EquilateralTriangleCalculator.class
 Extra\SavingsAccount.class
 edu\zuj\oop\computer\Computer.class
@@ -18,6 +19,7 @@ Extra\SquareMeterToPingConverter.class
 chapter11\InheritanceAndPolymorphism\UniversityStaffDemo\Faculty.class
 Extra\Gregorian_Calendar.class
 Extra\Table\Core.class
+chapter11\InheritanceAndPolymorphism\Event\Planner.class
 Extra\InterestCalculator.class
 chapter9\objectsClasses\StopWatch\TestStopWatch.class
 Extra\BMI_Calculator.class
@@ -82,6 +84,7 @@ chapter10\ObjectOrientedThinking\Time\UML.class
 edu\zuj\oop\elevator\Elevator.class
 chapter11\InheritanceAndPolymorphism\GeometricObject\Circle.class
 chapter9\objectsClasses\CircleSummary\Circle.class
+chapter11\InheritanceAndPolymorphism\Event\Main.class
 chapter11\InheritanceAndPolymorphism\GeometricObject\GeometricObject.class
 edu\zuj\oop\carPark\Test.class
 Extra\DistanceCalculator.class
@@ -89,6 +92,7 @@ chapter10\ObjectOrientedThinking\IBM\Bmi.class
 chapter10\ObjectOrientedThinking\FactorAnalyzer\FactorAnalyzer.class
 Extra\ArraySumMax.class
 Extra\DistinctNumbers.class
+chapter11\InheritanceAndPolymorphism\Event\CorporateEvent.class
 chapter10\ObjectOrientedThinking\IBM\Test.class
 chapter10\ObjectOrientedThinking\course\Test.class
 Extra\Employee.class
