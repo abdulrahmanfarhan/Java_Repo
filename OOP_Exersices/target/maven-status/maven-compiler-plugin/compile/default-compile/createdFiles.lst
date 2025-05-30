@@ -1,7 +1,6 @@
 chapter10\ObjectOrientedThinking\PrimeNumbers\StackOfInteger.class
 chapter9\objectsClasses\Fan\TestFan.class
 Extra\PositiveNumberSum.class
-Extra\loading.class
 Extra\A0GeniusCode.class
 edu\zuj\oop\rectangle\Rectangle.class
 Extra\RunwayLengthCalculator.class
@@ -28,8 +27,8 @@ chapter10\ObjectOrientedThinking\PrimeNumbers\PrimeNumbers.class
 Extra\RandomNumberGenerator.class
 chapter9\objectsClasses\DiamondPattern\DiamondPattern.class
 chapter11\InheritanceAndPolymorphism\UniversityStaffDemo\Employee.class
-Extra\EnergyCalculator.class
 Extra\FirstPattern.class
+Extra\EnergyCalculator.class
 edu\zuj\oop\rectangle\Test.class
 edu\zuj\oop\elevator\Test.class
 Extra\HexagonAreaCalculator.class
@@ -54,8 +53,9 @@ chapter9\objectsClasses\CircleSummary\CreatArrayOfObj.class
 chapter9\objectsClasses\Location\Test.class
 chapter10\ObjectOrientedThinking\ATM\ATM.class
 chapter9\objectsClasses\rectangles\Rectangle.class
-Extra\AverageAccelerationCalculator.class
+chapter11\InheritanceAndPolymorphism\Contest\ProgrammingContest.class
 Extra\utils\Validation.class
+Extra\AverageAccelerationCalculator.class
 chapter10\ObjectOrientedThinking\course\Course.class
 chapter11\InheritanceAndPolymorphism\UniversityStaffDemo\Person.class
 chapter10\ObjectOrientedThinking\ATM\Account.class
@@ -69,6 +69,7 @@ Extra\EnglishLettersArrays\Test.class
 chapter10\ObjectOrientedThinking\FactorAnalyzer\StackOfIntegers.class
 Extra\MinutesConverter.class
 Extra\AreaOfTriangle.class
+chapter11\InheritanceAndPolymorphism\Contest\Main.class
 chapter10\ObjectOrientedThinking\MyPoint\Test.class
 Extra\FutureInvestmentCalculator.class
 Extra\TrianglePattern.class
@@ -87,6 +88,7 @@ Extra\DistanceCalculator.class
 chapter10\ObjectOrientedThinking\IBM\Bmi.class
 chapter10\ObjectOrientedThinking\FactorAnalyzer\FactorAnalyzer.class
 Extra\ArraySumMax.class
+Extra\DistinctNumbers.class
 chapter10\ObjectOrientedThinking\IBM\Test.class
 chapter10\ObjectOrientedThinking\course\Test.class
 Extra\Employee.class
@@ -95,7 +97,9 @@ Extra\ComputeArea.class
 chapter10\ObjectOrientedThinking\Loan\TestLoanClass.class
 chapter10\ObjectOrientedThinking\Time\Test.class
 chapter9\objectsClasses\Account\TestAccount.class
+chapter11\InheritanceAndPolymorphism\Contest\Contest.class
 chapter9\objectsClasses\rectangles\TestRectangle.class
+chapter11\InheritanceAndPolymorphism\Contest\Team.class
 chapter9\objectsClasses\LinearEquations\Test.class
 chapter9\objectsClasses\Fan\Fan.class
 chapter10\ObjectOrientedThinking\StackOfIntegers\StackOfIntegers.class
