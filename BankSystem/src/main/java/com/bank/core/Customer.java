@@ -10,14 +10,13 @@ public class Customer {
     private String name;
     private String email;
     private String phoneNumber;
-    private ArrayList<Account> accounts;
+    private ArrayList<Account> accountsList = new ArrayList<>();
 
     public Customer(String name) {
         this.id = nextId++;
         this.name = name;
         this.email = "";
         this.phoneNumber = "";
-        this.accounts = new ArrayList<>();
     }
 
     public void setName(String name) {
@@ -48,8 +47,8 @@ public class Customer {
         return id;
     }
 
-    public ArrayList<Account> getAccounts() {
-        return accounts;
+    public ArrayList<Account> getAccountsList() {
+        return accountsList;
     }
 
     public String toString() {

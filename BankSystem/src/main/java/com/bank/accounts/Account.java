@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class Account {
 
     private int id;
-    private static int nextId = 1;
+    private static int nextId = 101;
     protected double balance;
     private Customer owner;
     private String creationDate;
@@ -22,7 +22,7 @@ public class Account {
         this.transactions = new ArrayList<>();
     }
 
-    public boolean deposit(double amount) {
+    public boolean depositDone(double amount) {
         if (amount > 0) {
             balance += amount;
             transactions.add(new Transaction("DEPOSIT", amount));

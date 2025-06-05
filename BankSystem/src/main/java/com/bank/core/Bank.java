@@ -20,7 +20,7 @@ public class Bank {
         return bankName;
     }
 
-    public ArrayList<Customer> getCustomers() {
+    public ArrayList<Customer> getCustomersList() {
         return customers;
     }
 
