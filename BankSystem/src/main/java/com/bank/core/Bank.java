@@ -7,13 +7,9 @@ public class Bank {
     private String bankName;
     private ArrayList<Customer> customers;
 
-    public Bank() {
-        this.bankName = "";
+    public Bank(String name) {
+        this.bankName = name;
         this.customers = new ArrayList<>();
-    }
-
-    public void setBankName(String bankName) {
-        this.bankName = bankName;
     }
 
     public String getBankName() {

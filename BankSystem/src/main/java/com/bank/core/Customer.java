@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Customer {
 
-    private static int nextId = 1001;
+    private static int nextID = 1001;
     private int id;
     private String name;
     private String email;
@@ -13,7 +13,7 @@ public class Customer {
     private ArrayList<Account> accountsList = new ArrayList<>();
 
     public Customer(String name) {
-        this.id = nextId++;
+        this.id = nextID++;
         this.name = name;
         this.email = "";
         this.phoneNumber = "";

@@ -13,8 +13,7 @@ public class Bank_UI {
     static Scanner s = new Scanner(System.in);
 
     public Bank_UI(String BankName) {
-        this.bank = new Bank();
-        this.bank.setBankName(BankName);
+        this.bank = new Bank(BankName);
     }
 
     public void start() {
@@ -22,7 +21,6 @@ public class Bank_UI {
         System.out.print("Press Enter to start...");
         s.nextLine();
 
-        UsefullMethods.clearScreen();
         boolean running = true;
         while (running) {
             UsefullMethods.clearScreen();
@@ -43,18 +41,23 @@ public class Bank_UI {
                     performCurrencyConversion();
                     break;
                 case 5:
+                    UsefullMethods.clearScreen();
                     displayBankInfo();
+
+                    System.out.print("Press Enter to return...");
+                    s.nextLine();
                     break;
                 case 6:
                     UsefullMethods.clearScreen();
                     displayAbout();
+
                     System.out.print("Press Enter to return to Main Menu...");
                     s.nextLine();
                     break;
                 //exit
                 case 7:
                     UsefullMethods.clearScreen();
-                    System.out.println("\n===== Thank you for using " + this.bank.getBankName() + " Bank! =====\n\n\n");
+                    System.out.println("\n===== Thank you for using " + this.bank.getBankName() + " Bank! =====");
                     running = false;
                     break;
             }
@@ -88,6 +91,7 @@ public class Bank_UI {
         System.out.println("===== Register New Customer =====");
         System.out.print("Enter customer name: ");
         String name = s.nextLine().trim();
+        
         if (name.isEmpty()) {
             System.out.println("Error: Name cannot be empty!");
             System.out.print("Press Enter to return...");
@@ -95,22 +99,23 @@ public class Bank_UI {
             return;
         }
 
-        Customer customer = new Customer(name);
+        Customer c = new Customer(name);
         System.out.print("Enter email (optional, press Enter to skip): ");
         String email = s.nextLine().trim();
         if (!email.isEmpty()) {
-            customer.setEmail(email);
+            c.setEmail(email);
         }
 
         System.out.print("Enter phone number (optional, press Enter to skip): ");
         String phone = s.nextLine().trim();
         if (!phone.isEmpty()) {
-            customer.setPhoneNumber(phone);
+            c.setPhoneNumber(phone);
         }
 
-        bank.getCustomersList().add(customer);
-        System.out.println("Success: Customer " + name + " registered with ID " + customer.getId());
-        //press enter to back
+        bank.getCustomersList().add(c);
+        System.out.println("Success: Customer " + name + " registered with ID " + c.getId());
+        
+        //back
         System.out.print("Press Enter to return...");
         s.nextLine();
     }
@@ -133,6 +138,8 @@ public class Bank_UI {
         System.out.println("5. Loan");
         System.out.println("6. Back");
         int type = UsefullMethods.getValidIntInput("Enter your choice: ", 1, 6);
+        
+        //back
         if (type == 6) {
             return;
         }
@@ -202,6 +209,7 @@ public class Bank_UI {
 
             int choice = UsefullMethods.getValidIntInput("Select an account: ", 1, accounts.size() + 1);
             if (choice == accounts.size() + 1) {
+                //back
                 break;
             }
 
@@ -234,6 +242,7 @@ public class Bank_UI {
                     } else {
                         System.out.println("Error: Invalid deposit amount!");
                     }
+
                     System.out.print("Press Enter to continue...");
                     s.nextLine();
                     break;
@@ -246,6 +255,7 @@ public class Bank_UI {
                     } else {
                         System.out.println("Error: Withdrawal failed (insufficient funds or restricted account)!");
                     }
+
                     System.out.print("Press Enter to continue...");
                     s.nextLine();
                     break;
@@ -256,11 +266,13 @@ public class Bank_UI {
                     if (transactions.isEmpty()) {
                         System.out.println("No transactions found.");
                     } else {
-                        for (Transaction t : transactions) {
-                            System.out.println(t);
+                        for (int i = 0; i < transactions.size(); i++) {
+                            Transaction t = transactions.get(i);
+                            System.out.println(t.toString());
                         }
                     }
                     System.out.println("===================================================================");
+
                     System.out.print("Press Enter to continue...");
                     s.nextLine();
                     break;
@@ -283,6 +295,7 @@ public class Bank_UI {
                     } else {
                         System.out.println("No interest/profit calculation available for this account.");
                     }
+
                     System.out.print("Press Enter to continue...");
                     s.nextLine();
                     break;
@@ -316,7 +329,7 @@ public class Bank_UI {
     }
 
     private void displayBankInfo() {
-        UsefullMethods.clearScreen();
+
         System.out.println("======= Bank Information =======");
         System.out.println(bank);
         ArrayList<Customer> customers = bank.getCustomersList();
@@ -337,8 +350,7 @@ public class Bank_UI {
                 }
             }
         }
-        System.out.print("Press Enter to return...");
-        s.nextLine();
+
     }
 
     private void displayAbout() {
