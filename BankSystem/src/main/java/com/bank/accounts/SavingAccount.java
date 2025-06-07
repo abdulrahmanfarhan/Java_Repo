@@ -9,20 +9,15 @@ public class SavingAccount extends Account {
     private double annualInterestRate;
     private double withdrawLimit;
 
-    public SavingAccount(double balance, Customer owner, double withdrawLimit) {
+    public SavingAccount(double balance, Customer owner, double withdrawLimit, double interestRate) {
         super(balance, owner);
         this.annualInterestRate = 0.0;
         this.withdrawLimit = withdrawLimit;
+        this.annualInterestRate = interestRate;
     }
 
     public double getAnnualInterestRate() {
         return annualInterestRate;
-    }
-
-    public void setAnnualInterestRate(double rate) {
-        if (rate >= 0) {
-            this.annualInterestRate = rate;
-        }
     }
 
     public double calculateInterest() {

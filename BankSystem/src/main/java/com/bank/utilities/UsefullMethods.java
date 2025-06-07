@@ -9,36 +9,24 @@ public final class UsefullMethods {
     private UsefullMethods() {
     }
 
-    public static int getValidIntInput(String prompt, int min, int max) {
-        while (true) {
-            System.out.print(prompt);
-            String inputStr = s.nextLine();
-            if (inputStr.matches("-?\\d+")) {
-                int input = Integer.parseInt(inputStr);
-                if (input >= min && input <= max) {
-                    return input;
-                }
-                System.out.println("Enter a number between " + min + " and " + max + ".");
-            } else {
-                System.out.println("Enter a valid number.");
-            }
-        }
+    public static int getValidIntInput(String prompt, int from, int to) {
+        int input;
+        do {
+            System.out.print(prompt + " (" + from + " - " + to + "): ");
+            input = s.nextInt();
+            s.nextLine();
+        } while (input < from || input > to);
+        return input;
     }
 
-    public static double getValidDoubleInput(String prompt, double min, double max) {
-        while (true) {
-            System.out.print(prompt);
-            String inputStr = s.nextLine();
-            if (inputStr.matches("-?\\d+(\\.\\d+)?")) {
-                double input = Double.parseDouble(inputStr);
-                if (input >= min && input <= max) {
-                    return input;
-                }
-                System.out.println("Enter a number between " + min + " and " + max + ".");
-            } else {
-                System.out.println("Enter a valid number.");
-            }
-        }
+    public static double getValidDoubleInput(String prompt, double from, double to) {
+        double input;
+        do {
+            System.out.print(prompt + " (" + from + " - " + to + "): ");
+            input = s.nextDouble();
+            s.nextLine();
+        } while (input < from || input > to);
+        return input;
     }
 
     public static void clearScreen() {

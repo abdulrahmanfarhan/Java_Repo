@@ -51,9 +51,10 @@ public class Bank_UI {
                     System.out.print("Press Enter to return to Main Menu...");
                     s.nextLine();
                     break;
+                //exit
                 case 7:
                     UsefullMethods.clearScreen();
-                    System.out.println("\n===== Thank you for using " + this.bank.getBankName() + "! =====\n\n\n");
+                    System.out.println("\n===== Thank you for using " + this.bank.getBankName() + " Bank! =====\n\n\n");
                     running = false;
                     break;
             }
@@ -95,13 +96,12 @@ public class Bank_UI {
         }
 
         Customer customer = new Customer(name);
-        //set email
         System.out.print("Enter email (optional, press Enter to skip): ");
         String email = s.nextLine().trim();
         if (!email.isEmpty()) {
             customer.setEmail(email);
         }
-        //set phone number
+
         System.out.print("Enter phone number (optional, press Enter to skip): ");
         String phone = s.nextLine().trim();
         if (!phone.isEmpty()) {
@@ -110,6 +110,7 @@ public class Bank_UI {
 
         bank.getCustomersList().add(customer);
         System.out.println("Success: Customer " + name + " registered with ID " + customer.getId());
+        //press enter to back
         System.out.print("Press Enter to return...");
         s.nextLine();
     }
@@ -142,19 +143,17 @@ public class Bank_UI {
         switch (type) {
             case 1:
                 double withdrawLimit = UsefullMethods.getValidDoubleInput("Enter withdraw limit: ", 0, balance);
-                account = new SavingAccount(balance, customer, withdrawLimit);
                 double interestRate = UsefullMethods.getValidDoubleInput("Enter annual interest rate (e.g., 0.05 for 5%): ", 0, 1);
-                ((SavingAccount) account).setAnnualInterestRate(interestRate);
+                account = new SavingAccount(balance, customer, withdrawLimit, interestRate);
                 break;
             case 2:
                 double overDraftLimit = UsefullMethods.getValidDoubleInput("Enter overdraft limit: ", 0, Double.MAX_VALUE);
                 account = new CheckingAccount(balance, customer, overDraftLimit);
                 break;
             case 3:
-                int maturityPeriod = UsefullMethods.getValidIntInput("Enter maturity period (months): ", 1, Integer.MAX_VALUE);
-                account = new FixedDepositAccount(balance, customer, maturityPeriod);
+                int maturityPeriod = UsefullMethods.getValidIntInput("Enter maturity period (months): ", 1, 1000);
                 interestRate = UsefullMethods.getValidDoubleInput("Enter annual interest rate (e.g., 0.07 for 7%): ", 0, 1);
-                ((FixedDepositAccount) account).setAnnualInterestRate(interestRate);
+                account = new FixedDepositAccount(balance, customer, maturityPeriod, interestRate);
                 break;
             case 4:
                 double profitShareRate = UsefullMethods.getValidDoubleInput("Enter profit share rate (e.g., 0.04 for 4%): ", 0, 1);
@@ -162,13 +161,15 @@ public class Bank_UI {
                 break;
             case 5:
                 double loanInterestRate = UsefullMethods.getValidDoubleInput("Enter interest rate (e.g., 0.06 for 6%): ", 0, 1);
-                int termInMonths = UsefullMethods.getValidIntInput("Enter loan term (months): ", 1, Integer.MAX_VALUE);
+                int termInMonths = UsefullMethods.getValidIntInput("Enter loan term (months): ", 1, 1000);
                 account = new Loan(balance, customer, loanInterestRate, termInMonths);
                 break;
         }
 
         customer.getAccountsList().add(account);
         System.out.println("Success: Account created with ID " + account.getId());
+
+        //press enter to back
         System.out.print("Press Enter to return...");
         s.nextLine();
     }
@@ -226,7 +227,6 @@ public class Bank_UI {
             switch (choice) {
                 case 1:
                     UsefullMethods.clearScreen();
-                    //ايداع
                     System.out.println("===== Deposit =====");
                     double depositAmount = UsefullMethods.getValidDoubleInput("Enter amount to deposit: ", 0, Double.MAX_VALUE);
                     if (account.depositDone(depositAmount)) {
@@ -239,9 +239,8 @@ public class Bank_UI {
                     break;
                 case 2:
                     UsefullMethods.clearScreen();
-                    //سحب
                     System.out.println("===== Withdraw =====");
-                    double withdrawAmount = UsefullMethods.getValidDoubleInput("Enter amount to withdraw: ", 0, Double.MAX_VALUE);
+                    double withdrawAmount = UsefullMethods.getValidDoubleInput("Enter amount to withdraw: ", 0, account.getBalance());
                     if (account.withdraw(withdrawAmount)) {
                         System.out.println("Success: Withdrew " + withdrawAmount + ", New Balance: " + account.getBalance());
                     } else {
@@ -252,7 +251,7 @@ public class Bank_UI {
                     break;
                 case 3:
                     UsefullMethods.clearScreen();
-                    System.out.println("===== Transactions for Account ID " + account.getId() + " =====");
+                    System.out.println("============= Transactions for Account ID " + account.getId() + " ============");
                     ArrayList<Transaction> transactions = account.getTransactions();
                     if (transactions.isEmpty()) {
                         System.out.println("No transactions found.");
@@ -261,6 +260,7 @@ public class Bank_UI {
                             System.out.println(t);
                         }
                     }
+                    System.out.println("===================================================================");
                     System.out.print("Press Enter to continue...");
                     s.nextLine();
                     break;
@@ -310,13 +310,14 @@ public class Bank_UI {
             double usd = CurrencyConverter.convertJODToUSD(amount);
             System.out.println(amount + " JOD = " + usd + " USD");
         }
+
         System.out.print("Press Enter to return...");
         s.nextLine();
     }
 
     private void displayBankInfo() {
         UsefullMethods.clearScreen();
-        System.out.println("===== Bank Information =====");
+        System.out.println("======= Bank Information =======");
         System.out.println(bank);
         ArrayList<Customer> customers = bank.getCustomersList();
         if (customers.isEmpty()) {
@@ -324,16 +325,14 @@ public class Bank_UI {
         } else {
             System.out.println("Customers:");
             for (Customer c : customers) {
-                System.out.println("----");
+                System.out.println("====================");
                 System.out.println(c);
-                System.out.println("----");
                 ArrayList<Account> accounts = c.getAccountsList();
                 if (!accounts.isEmpty()) {
                     System.out.println("  Accounts:");
                     for (Account a : accounts) {
-                        System.out.println("-----");
+                        System.out.println("====================");
                         System.out.println("    " + a);
-                        System.out.println("-----");
                     }
                 }
             }
@@ -360,7 +359,7 @@ public class Bank_UI {
         ArrayList<Customer> customersList = bank.getCustomersList();
         if (customersList.isEmpty()) {
             System.out.println("Error: No customers registered. Please register a customer first.");
-            return null;
+            return null;//back
         }
 
         System.out.println("\nSelect a customer:");
@@ -368,6 +367,7 @@ public class Bank_UI {
             System.out.println((i + 1) + ". " + customersList.get(i).getName() + " (ID: " + customersList.get(i).getId() + ")");
         }
         System.out.println((customersList.size() + 1) + ". Back");
+
         int choice = UsefullMethods.getValidIntInput("Enter your choice: ", 1, customersList.size() + 1);
         if (choice == customersList.size() + 1) {
             return null;//back

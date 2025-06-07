@@ -1,17 +1,17 @@
 package com.bank.transactions;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Transaction {
 
     private String type;
     private double amount;
-    private String time;
+    private Date time;
 
     public Transaction(String type, double amount) {
         this.type = type;
         this.amount = amount;
-        this.time = LocalDate.now().toString();
+        this.time = new Date();
     }
 
     public String getType() {
@@ -22,11 +22,13 @@ public class Transaction {
         return amount;
     }
 
-    public String getTime() {
+    public Date getTime() {
         return time;
     }
 
+    @Override
     public String toString() {
-        return "Transaction: Type=" + type + ", Amount=" + amount + ", Time=" + time;
+        System.out.println("===================================================================");
+        return "Transaction: Time= + " + time.toString() + ", Amount=" + amount + ", Type=" + type;
     }
 }

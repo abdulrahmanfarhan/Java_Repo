@@ -7,9 +7,9 @@ public class FixedDepositAccount extends Account {
     private double annualInterestRate;
     private int maturityPeriod; // in months
 
-    public FixedDepositAccount(double balance, Customer owner, int maturityPeriod) {
+    public FixedDepositAccount(double balance, Customer owner, int maturityPeriod, double interestRate) {
         super(balance, owner);
-        this.annualInterestRate = 0.0;
+        this.annualInterestRate = interestRate;
         this.maturityPeriod = maturityPeriod;
     }
 
