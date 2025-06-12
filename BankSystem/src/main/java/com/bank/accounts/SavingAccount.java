@@ -33,6 +33,11 @@ public class SavingAccount extends Account {
         return false;
     }
 
+    public double getWithdrawLimit() {
+        return withdrawLimit;
+    }
+    
+
     public String toString() {
         return "SavingAccount: ID=" + getId() + ", Balance=" + getBalance() + ", InterestRate=" + annualInterestRate + ", WithdrawLimit=" + withdrawLimit;
     }

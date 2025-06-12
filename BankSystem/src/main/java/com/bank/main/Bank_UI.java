@@ -91,7 +91,7 @@ public class Bank_UI {
         System.out.println("===== Register New Customer =====");
         System.out.print("Enter customer name: ");
         String name = s.nextLine().trim();
-        
+
         if (name.isEmpty()) {
             System.out.println("Error: Name cannot be empty!");
             System.out.print("Press Enter to return...");
@@ -114,7 +114,7 @@ public class Bank_UI {
 
         bank.getCustomersList().add(c);
         System.out.println("Success: Customer " + name + " registered with ID " + c.getId());
-        
+
         //back
         System.out.print("Press Enter to return...");
         s.nextLine();
@@ -138,7 +138,7 @@ public class Bank_UI {
         System.out.println("5. Loan");
         System.out.println("6. Back");
         int type = UsefullMethods.getValidIntInput("Enter your choice: ", 1, 6);
-        
+
         //back
         if (type == 6) {
             return;
@@ -249,13 +249,28 @@ public class Bank_UI {
                 case 2:
                     UsefullMethods.clearScreen();
                     System.out.println("===== Withdraw =====");
-                    double withdrawAmount = UsefullMethods.getValidDoubleInput("Enter amount to withdraw: ", 0, account.getBalance());
-                    if (account.withdraw(withdrawAmount)) {
-                        System.out.println("Success: Withdrew " + withdrawAmount + ", New Balance: " + account.getBalance());
+                    if (account instanceof SavingAccount) {
+                        double withdrawAmount = UsefullMethods.getValidDoubleInput("Enter amount to withdraw: ", 0, ((SavingAccount) account).getWithdrawLimit());
+                        if (account.withdraw(withdrawAmount)) {
+                            System.out.println("Success: Withdrew " + withdrawAmount + ", New Balance: " + account.getBalance());
+                        } else {
+                            System.out.println("Error: Withdrawal failed (insufficient funds or restricted account)!");
+                        }
+                    } else if (account instanceof CheckingAccount) {
+                        double withdrawAmount = UsefullMethods.getValidDoubleInput("Enter amount to withdraw: ", 0, Double.MAX_VALUE);
+                        if (account.withdraw(withdrawAmount)) {
+                            System.out.println("Success: Withdrew " + withdrawAmount + ", New Balance: " + account.getBalance());
+                        } else {
+                            System.out.println("Error: Withdrawal failed (insufficient funds or restricted account)!");
+                        }
                     } else {
-                        System.out.println("Error: Withdrawal failed (insufficient funds or restricted account)!");
+                        double withdrawAmount = UsefullMethods.getValidDoubleInput("Enter amount to withdraw: ", 0, account.getBalance());
+                        if (account.withdraw(withdrawAmount)) {
+                            System.out.println("Success: Withdrew " + withdrawAmount + ", New Balance: " + account.getBalance());
+                        } else {
+                            System.out.println("Error: Withdrawal failed (insufficient funds or restricted account)!");
+                        }
                     }
-
                     System.out.print("Press Enter to continue...");
                     s.nextLine();
                     break;
