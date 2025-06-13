@@ -1,4 +1,4 @@
-package chapter10.ObjectOrientedThinking.people;
+package chapter11.InheritanceAndPolymorphism.people;
 
 public class Test {
 

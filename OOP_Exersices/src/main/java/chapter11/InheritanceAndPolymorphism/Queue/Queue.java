@@ -1,4 +1,4 @@
-package chapter10.ObjectOrientedThinking.Queue;
+package chapter11.InheritanceAndPolymorphism.Queue;
 
 import java.util.NoSuchElementException;
 

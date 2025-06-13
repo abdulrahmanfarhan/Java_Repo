@@ -1,4 +1,4 @@
-package chapter10.ObjectOrientedThinking.FirstFit;
+package chapter11.InheritanceAndPolymorphism.FirstFit;
 
 import java.util.ArrayList;
 
