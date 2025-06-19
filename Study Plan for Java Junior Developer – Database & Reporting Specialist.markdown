@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This 12-week study plan, spanning **June 19, 2025, to September 11, 2025**, is designed to equip you with the skills required for the *Java Junior Developer – Database & Reporting Specialist* role. It integrates Meta courses, the Java Database Connectivity specialization, and key chapters from the following books:
+This 12-week study plan, is designed to equip you with the skills required for the *Java Junior Developer – Database & Reporting Specialist* role. It integrates Meta courses, the Java Database Connectivity specialization, and key chapters from the following books:
 
 - *Database System Concepts* (6th edition) by Abraham Silberschatz et al.
 - *Learning SQL* by Alan Beaulieu
@@ -21,7 +21,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ## 📅 Detailed 12-Week Study Schedule
 
-### Week 1 (June 19–25, 2025)
+### Week 1
 **Objective:** Build foundational database theory and basic SQL skills.  
 **Resources:**
 - *Database System Concepts*: Chapters 1 (Introduction) & 2 (Relational Model)
@@ -40,7 +40,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ---
 
-### Week 2 (June 26–July 2, 2025)
+### Week 2
 **Objective:** Master database design and fundamental SQL queries.  
 **Resources:**
 - *Database System Concepts*: Chapters 6 (E-R Modeling) & 7 (Relational Design)
@@ -59,7 +59,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ---
 
-### Week 3 (July 3–9, 2025)
+### Week 3
 **Objective:** Learn advanced querying and MySQL management basics.  
 **Resources:**
 - *Learning SQL*: Chapters 5 (Multiple-Table Querying) & 6 (Set Operations)
@@ -78,7 +78,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ---
 
-### Week 4 (July 10–16, 2025)
+### Week 4
 **Objective:** Master SQL functions, aggregates, and introduce JasperReports.  
 **Resources:**
 - *Learning SQL*: Chapters 7 (Functions & Conversions) & 8 (Grouping & Aggregates)
@@ -97,7 +97,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ---
 
-### Week 5 (July 17–23, 2025)
+### Week 5
 **Objective:** Learn subqueries, advanced joins, and Java/reporting integration.  
 **Resources:**
 - *Learning SQL*: Chapters 9 (Subqueries) & 10 (Advanced Joins)
@@ -116,7 +116,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ---
 
-### Week 6 (July 24–30, 2025)
+### Week 6
 **Objective:** Understand transactions, conditional logic, and create reports.  
 **Resources:**
 - *Learning SQL*: Chapters 11 (Conditional Logic) & 12 (Transactions)
@@ -135,7 +135,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ---
 
-### Week 7 (July 31–August 6, 2025)
+### Week 7
 **Objective:** Master indexes, views, dynamic reporting, and MySQL setup.  
 **Resources:**
 - *Learning SQL*: Chapters 13 (Indexes & Constraints) & 14 (Views)
@@ -154,7 +154,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ---
 
-### Week 8 (August 7–13, 2025)
+### Week 8
 **Objective:** Explore metadata, analytic SQL, and alternate data sources.  
 **Resources:**
 - *Learning SQL*: Chapters 15 (Metadata) & 16 (Analytic Functions)
@@ -173,7 +173,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ---
 
-### Week 9 (August 14–20, 2025)
+### Week 9
 **Objective:** Enhance report design, manage MySQL users, and learn JDBC basics.  
 **Resources:**
 - *JasperReports 3.5*: Chapter 6
@@ -192,7 +192,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ---
 
-### Week 10 (August 21–27, 2025)
+### Week 10
 **Objective:** Integrate charts, import data, and write secure queries.  
 **Resources:**
 - *JasperReports 3.5*: Chapter 7
@@ -211,7 +211,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ---
 
-### Week 11 (August 28–September 3, 2025)
+### Week 11
 **Objective:** Master advanced Jasper features and multi-format exporting.  
 **Resources:**
 - *JasperReports 3.5*: Chapters 8–9
@@ -229,7 +229,7 @@ The plan emphasizes a balance of theoretical learning and practical application,
 
 ---
 
-### Week 12 (September 4–10, 2025)
+### Week 12
 **Objective:** Finalize report design, integrate with frameworks, and learn JPA.  
 **Resources:**
 - *JasperReports 3.5*: Chapters 10–11
