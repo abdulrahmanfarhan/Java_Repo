@@ -1,7 +1,6 @@
 package chapter12.ExceptionHandling.WriteDataWithAutoClose;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 public class WriteDataWithAutoClose {
