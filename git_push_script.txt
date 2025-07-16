@@ -1,1 +1,8 @@
 git add . && git commit -m "Updated project files" && git push
+
+
+
+
+git add .
+git commit -m "Sync local changes"
+git push origin master
