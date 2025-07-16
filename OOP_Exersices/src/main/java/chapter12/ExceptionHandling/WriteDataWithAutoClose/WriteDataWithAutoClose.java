@@ -15,7 +15,7 @@ public class WriteDataWithAutoClose {
         }
 
         try (
-                PrintWriter output = new PrintWriter(file);) {
+                PrintWriter output = new PrintWriter(file)) {
             output.print("John T Smith ");
             output.println(90);
             output.print("Eric K Jones ");
