@@ -5,12 +5,12 @@ import java.io.PrintWriter;
 
 public class WriteData {
     public static void main(String[] args) throws java.io.IOException {
-        File f = new File("text.txt");
-        PrintWriter wrter = new PrintWriter(f);
+        File f = new File("text2.txt");
+        PrintWriter writer = new PrintWriter(f);
         for (int i = 0; i <= 100; i++) {
-            wrter.println("My name is Abdulrahman farhan" + i*2);
-            System.out.println("******"+i+"******");
+            writer.println("My name is Abdulrahman farhan" + i*2);
+            writer.println("******+i+******");
         }
-        wrter.close();
+        writer.close();
     }
 }
