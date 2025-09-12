@@ -17,27 +17,24 @@ public class Employee {
         setBirthDate(birthDate);
     }
 
-    public Employee(String name, Gender gender, double salary, java.util.Date birthDate) {
-        this(0, name, gender, birthDate, salary);
-    }
 
     public void setId(int id) {
         if (id >= 0) this.id = id;
     }
 
-    private void setName(String name) {
+    public void setName(String name) {
         if (name != null) this.name = name;
     }
 
-    private void setGender(Gender gender) {
+    public void setGender(Gender gender) {
         if (gender.equals(Gender.MALE) || gender.equals(Gender.FEMALE)) this.gender = gender;
     }
 
-    private void setSalary(double salary) {
+    public void setSalary(double salary) {
         if (salary >= 0) this.salary = salary;
     }
 
-    private void setBirthDate(java.util.Date birthDate) {
+    public void setBirthDate(java.util.Date birthDate) {
         if (birthDate != null) {
             this.BirthDate = new java.sql.Date(birthDate.getTime());
         } else {

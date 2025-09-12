@@ -15,7 +15,7 @@ public class EmployeeDAOImplementation implements EmployeeDAO {
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery();) {
+             ResultSet resultSet = preparedStatement.executeQuery()) {
 
             while (resultSet.next()) {
                 int getId = resultSet.getInt("id");
@@ -38,23 +38,25 @@ public class EmployeeDAOImplementation implements EmployeeDAO {
 
         try (
                 Connection connection = DatabaseConnection.getConnection();
-                PreparedStatement preparedStatement = connection.prepareStatement(query);
-                ResultSet resultSet = preparedStatement.executeQuery()) {
-            preparedStatement.setInt(1, id);
+                PreparedStatement preparedStatement = connection.prepareStatement(query)
+        ) {
+            preparedStatement.setInt(1, id); // هنا أول شي
 
-            while (resultSet.next()) {
-                int getId = resultSet.getInt("id");
-                String getName = resultSet.getString("name");
-                Gender getGender = resultSet.getBoolean("gender") ? Gender.MALE : Gender.FEMALE;
-                double getSalary = resultSet.getDouble("salary");
-                Date getDate = resultSet.getDate("birth_date");
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    int getId = resultSet.getInt("id");
+                    String getName = resultSet.getString("name");
+                    Gender getGender = resultSet.getBoolean("gender") ? Gender.MALE : Gender.FEMALE;
+                    double getSalary = resultSet.getDouble("salary");
+                    Date getDate = resultSet.getDate("birth_date");
 
-                employee = new Employee(getId, getName, getGender, getDate, getSalary);
+                    employee = new Employee(getId, getName, getGender, getDate, getSalary);
+                }
             }
-
         }
         return employee;
     }
+
 
     @Override
     public void save(Employee employee) throws SQLException {
@@ -62,7 +64,7 @@ public class EmployeeDAOImplementation implements EmployeeDAO {
             String query = "INSERT INTO employee (name, gender, birth_date, salary) VALUES (?, ?, ?, ?)";
             try (
                     Connection connection = DatabaseConnection.getConnection();
-                    PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+                    PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)
             ) {
                 statement.setString(1, employee.getName());
                 statement.setBoolean(2, employee.getGender() == Gender.MALE);
@@ -79,7 +81,7 @@ public class EmployeeDAOImplementation implements EmployeeDAO {
         } else {
             String query = "UPDATE employee SET name=?, gender=?, birth_date=?, salary=? WHERE id=?";
             try (Connection connection = DatabaseConnection.getConnection();
-                 PreparedStatement preparedStatement = connection.prepareStatement(query);
+                 PreparedStatement preparedStatement = connection.prepareStatement(query)
             ) {
                 preparedStatement.setString(1, employee.getName());
                 preparedStatement.setBoolean(2, Gender.MALE == employee.getGender());

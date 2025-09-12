@@ -5,56 +5,42 @@ import com.abood.DAO.EmployeeDAOImplementation;
 import com.abood.module.Employee;
 import com.abood.module.Gender;
 
+import java.sql.Date;
 import java.sql.SQLException;
-import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Calendar;
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
+        try {
+            EmployeeDAO dao = new EmployeeDAOImplementation();
 
-        EmployeeDAO DAO = new EmployeeDAOImplementation();
+            Calendar cal = Calendar.getInstance();
+            cal.set(2000, Calendar.JANUARY, 1);
+            Employee newEmployee = new Employee(0, "TestUser", Gender.MALE,
+                    new Date(cal.getTimeInMillis()), 500.0);
+            dao.save(newEmployee);
+            System.out.println("Saving employee done, id: " + newEmployee);
 
-        Calendar cal = Calendar.getInstance();
-        cal.set(2025, Calendar.MAY, 27);
+            Employee found = dao.findEmployeeById(newEmployee.getId());
+            System.out.println("Employee founded :" + found);
 
-        // نخزن الأرقام كـ String عشان نحتفظ بصيغة +962
-        Set<String> existingNumbers = new HashSet<>();
-        for (Employee employee : DAO.getAllEmployee()) {
-            existingNumbers.add(employee.getName()); // ما في داعي parseInt
-        }
+            found.setName("UpdatedUser");
+            found.setSalary(1000.0);
+            dao.save(found);
+            System.out.println("Updating employee " + found);
 
-        int total = 1000; // عدد الموظفين المطلوب إضافتهم
-        for (int i = 0; i < total; i++) {
-            boolean done = false;
-            int attempts = 0;
-            while (!done && attempts < 100) {
-                attempts++;
-                int number = ThreadLocalRandom.current().nextInt(780000000, 790000000);
-                String phone = "+962" + number;
-
-                if (!existingNumbers.contains(phone)) {
-                    DAO.save(new Employee(0, phone, Gender.FEMALE, cal.getTime(), 0));
-                    existingNumbers.add(phone);
-                    done = true;
-                }
+            List<Employee> employees = dao.getAllEmployee();
+            System.out.println("Employee list: ");
+            for (Employee emp : employees) {
+                System.out.println(emp);
             }
 
-            // حساب النسبة المئوية
-            if ((i + 1) % (total / 100) == 0) {
-                int percent = (i + 1) * 100 / total;
-                for (int b = 0; b< 5; b++){
-                    System.out.println();
-                }
-                System.out.println("------------------------------------------------");
-                for (int b = 0; b< 5; b++){
-                    System.out.println();
-                }
-                System.out.println("          "+percent + "%");
-                for (int b = 0; b< 5; b++){
-                    System.out.println();
-                }
-                System.out.println("------------------------------------------------");
-            }
+            dao.delete(found.getId());
+            System.out.println("Saving an employee with id : " + found.getId());
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
