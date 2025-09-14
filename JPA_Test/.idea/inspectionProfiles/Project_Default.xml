@@ -6,15 +6,18 @@
       <option name="ignoredModules">
         <list>
           <option value="JPA_Test" />
+          <option value="JPA_Test" />
         </list>
       </option>
       <option name="ignoredPackages">
         <list>
           <option value="org.springframework:spring-context:4.3.25.RELEASE" />
+          <option value="mysql:mysql-connector-java:8.0.28" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="Not exploitable" />
           <option value="Not exploitable" />
         </list>
       </option>

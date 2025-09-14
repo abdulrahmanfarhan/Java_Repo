@@ -1,7 +1,14 @@
-<persistence>
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
+             version="3.1">
+
     <persistence-unit name="EmployeeService"
                       transaction-type="RESOURCE_LOCAL">
         <class>examples.model.Employee</class>
+
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="create"/>
             <property name="javax.persistence.jdbc.driver"
@@ -9,7 +16,8 @@
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:mysql://localhost:3306/EmpServDB?useSSL=false&amp;serverTimezone=UTC"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="your_password"/>
+            <property name="javax.persistence.jdbc.password" value="abdulrahman-farhan@2004"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
         </properties>
     </persistence-unit>
 </persistence>

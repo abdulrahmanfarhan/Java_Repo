@@ -13,36 +13,39 @@ public class Main {
 
         // create and persist an employee
         em.getTransaction().begin();
-        Employee emp = employeeService.creatEmployee(123, "John", 2000);
+        Employee emp = employeeService.creatEmployee("John", 2000);
         em.getTransaction().commit();
 
-        System.out.println("Persisted :"+emp);
+        System.out.println("Persisted :" + emp);
 
         // find a specific employee
-        emp = employeeService.findEmployee(123);
-        System.out.println("Found :"+emp);
+        emp = employeeService.findEmployee(emp.getId());
+        System.out.println("Found :" + emp);
 
         // find all employees
         List<Employee> emps = employeeService.findAllEmployees();
-        for (Employee e : emps){
+        for (Employee e : emps) {
             System.out.println(e);
         }
 
 
-
-
         // update Employee
         em.getTransaction().begin();
-        emp = employeeService.raiseEmployeeSalary(123, 1000);
+        emp = employeeService.raiseEmployeeSalary(emp.getId(), 1000);
         em.getTransaction().commit();
-        System.out.println("Update "+emp);
+        System.out.println("Update " + emp);
 
-        //remove an employee
-        em.getTransaction().begin();
-        employeeService.removeEmployee(123);
-        em.getTransaction().commit();
-        System.out.println("Removed Employee 123");
-        emp = null;
+
+        boolean toTurrnRemovingOddAndCheckDB = true;
+        if (toTurrnRemovingOddAndCheckDB) {
+            //remove an employee
+            int id = emp.getId();
+            em.getTransaction().begin();
+            employeeService.removeEmployee(emp.getId());
+            em.getTransaction().commit();
+            System.out.println("Removed Employee whith id +\"" + id + "\"");
+            emp = null;
+        }
 
         em.close();
         emf.close();

@@ -12,13 +12,16 @@ public class EmployeeService {
         this.entityManager = entityManager;
     }
 
-    public Employee creatEmployee(int id, String name, long salary){
-        Employee emp = new Employee(id);
-        emp.setName(name);
-        emp.setSalary(salary);
-        entityManager.persist(emp);
-        return emp;
-    }
+    public Employee creatEmployee(String name, long salary){
+            Employee emp = new Employee();
+            emp.setName(name);
+            emp.setSalary(salary);
+
+            // استخدم merge بدلاً من persist لتجنب الخطأ
+            emp = entityManager.merge(emp);
+
+            return emp;
+        }
 
     public Employee findEmployee(int id){
         return entityManager.find(Employee.class, id);
@@ -40,7 +43,7 @@ public class EmployeeService {
 
     public List<Employee> findAllEmployees(){
         TypedQuery<Employee> query = entityManager.createQuery(
-                "SELECT e FROM Employee", Employee.class
+                "SELECT e FROM Employee e", Employee.class
         );
         return query.getResultList();
     }
