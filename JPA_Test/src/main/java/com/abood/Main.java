@@ -1,17 +1,50 @@
 package com.abood;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import jakarta.persistence.*;
+
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("EmployeeService");
+        EntityManager em = emf.createEntityManager();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        EmployeeService employeeService = new EmployeeService(em);
+
+        // create and persist an employee
+        em.getTransaction().begin();
+        Employee emp = employeeService.creatEmployee(123, "John", 2000);
+        em.getTransaction().commit();
+
+        System.out.println("Persisted :"+emp);
+
+        // find a specific employee
+        emp = employeeService.findEmployee(123);
+        System.out.println("Found :"+emp);
+
+        // find all employees
+        List<Employee> emps = employeeService.findAllEmployees();
+        for (Employee e : emps){
+            System.out.println(e);
         }
+
+
+
+
+        // update Employee
+        em.getTransaction().begin();
+        emp = employeeService.raiseEmployeeSalary(123, 1000);
+        em.getTransaction().commit();
+        System.out.println("Update "+emp);
+
+        //remove an employee
+        em.getTransaction().begin();
+        employeeService.removeEmployee(123);
+        em.getTransaction().commit();
+        System.out.println("Removed Employee 123");
+        emp = null;
+
+        em.close();
+        emf.close();
     }
 }
