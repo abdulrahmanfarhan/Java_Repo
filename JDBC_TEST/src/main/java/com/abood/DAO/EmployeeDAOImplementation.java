@@ -57,10 +57,9 @@ public class EmployeeDAOImplementation implements EmployeeDAO {
         return employee;
     }
 
-
     @Override
     public void save(Employee employee) throws SQLException {
-        if (employee.getId() <= 0) {
+        if (employee.getId() <= 0) { // New employee
             String query = "INSERT INTO employee (name, gender, birth_date, salary) VALUES (?, ?, ?, ?)";
             try (
                     Connection connection = DatabaseConnection.getConnection();
@@ -78,7 +77,7 @@ public class EmployeeDAOImplementation implements EmployeeDAO {
                     }
                 }
             }
-        } else {
+        } else { // Existing employee, update
             String query = "UPDATE employee SET name=?, gender=?, birth_date=?, salary=? WHERE id=?";
             try (Connection connection = DatabaseConnection.getConnection();
                  PreparedStatement preparedStatement = connection.prepareStatement(query)
