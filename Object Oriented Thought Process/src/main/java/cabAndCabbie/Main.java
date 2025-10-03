@@ -9,8 +9,8 @@ public class Main {
     public static void main(String[] args) {
         Driver driver = new Driver("Abdulrahman");
 
-        Vehicle taxi = new Taxi(driver);
-        Vehicle truck = new Truck(driver);
+        Taxi taxi = new Taxi(driver);
+        Truck truck = new Truck(driver);
 
         driver.drive(taxi);
         driver.drive(truck);

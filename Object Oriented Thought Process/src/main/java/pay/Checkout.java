@@ -1,9 +1,9 @@
 package pay;
 
 public class Checkout {
-    private paymentMethod paymentMethod;
+    private PaymentMethod paymentMethod;
 
-    public Checkout(paymentMethod paymentMethod) {
+    public Checkout(PaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
 

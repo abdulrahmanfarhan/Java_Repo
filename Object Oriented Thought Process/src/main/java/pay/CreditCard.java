@@ -1,6 +1,6 @@
 package pay;
 
-public class CreditCard implements paymentMethod {
+public class CreditCard implements PaymentMethod {
 
     @Override
     public void pay(double amount) {

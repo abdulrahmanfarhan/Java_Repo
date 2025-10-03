@@ -11,8 +11,7 @@ public class DatabaseConnection {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "abdulrahman-farhan@2004";
     private static final String URL = String.format(
-            "jdbc:mysql://%s:%d/%s",
-            HOST, PORT, DB_NAME
+            "jdbc:mysql://%s:%d/%s", HOST, PORT, DB_NAME
     );
 
     public DatabaseConnection() {}

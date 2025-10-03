@@ -1,6 +1,6 @@
 package pay;
 
-public class PayPal implements paymentMethod {
+public class PayPal implements PaymentMethod {
 
     @Override
     public void pay(double amount) {
